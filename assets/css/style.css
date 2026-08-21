@@ -906,7 +906,7 @@ p:last-child { margin-bottom: 0; }
 .custody-table td {
   padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--border-dark);
-  color: var(--text-on-dark);
+  color: color: #333;
 }
 
 .custody-table td:first-child {
