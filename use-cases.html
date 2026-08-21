@@ -1,0 +1,63 @@
+---
+layout: default
+title: Use Cases
+description: "Where independent AI governance evidence matters: regulated enterprise deployments, cross-organizational agent transactions, compliance evidence, incident forensics."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Where this applies</span>
+    <h1>Use Cases</h1>
+    <p class="lead">Independent governance evidence matters wherever AI systems take consequential actions and the resulting record must survive scrutiny by someone other than the operator.</p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Regulated enterprise deployment</h3>
+        <p>A financial institution deploys AI agents for trade surveillance, client advisory, or fraud detection. The regulator will ask for evidence of how those agents were governed at the moment of each decision. Platform-native telemetry puts the institution in the position of proving its compliance using evidence authored by the platform whose product is under review. Scarp Governance Gateway produces evidence signed with the institution's own keys, stored in the institution's own infrastructure, verifiable by the examiner offline.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Healthcare AI compliance</h3>
+        <p>A hospital deploys AI for radiology triage, clinical decision support, or patient data analysis. HIPAA audit controls require the entity to produce compliance evidence that stands up to independent scrutiny. When the governance system and the governed system share one root of trust, the compliance evidence is a promise. Independently verifiable governance records close that gap for every clinical AI action.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cross-organizational agent transactions</h3>
+        <p>Two companies' agents negotiate terms and close a deal. Both companies are committed by what their agents agreed to. Neither walks away holding its own record of what happened unless an independent governance layer produces one. The evidence record must be bilateral: both parties hold it, either can verify it, and it does not depend on any third party to confirm what it says.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Defense and national security</h3>
+        <p>A defense ministry deploys AI agents on classified networks. The agents act on classified data under rules the ministry must enforce. The governance evidence must be produced and stored entirely within the ministry's own infrastructure, verifiable offline in air-gapped environments, with no dependency on external platforms or vendor cooperation.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-hop agent chains</h3>
+        <p>An agent calls a provider, receives tool-use instructions, invokes an MCP tool server, and the tool server calls another provider. Each hop in that chain produces its own governance decision and its own signed evidence record. The chain is linked cryptographically so an auditor can walk the full sequence and verify that governance was enforced at every step, not just at the first one.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Incident forensics</h3>
+        <p>An AI agent takes an action that causes harm. The legal and regulatory response begins. The institution that deployed the agent must produce a record of what the agent was authorized to do, what it actually did, and what governance controls were in effect at the moment of the incident. If that record was authored by the same party whose conduct is under investigation, it is an assertion. If it was signed with the customer's own HSM keys and is independently verifiable, it is evidence.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Sovereign AI governance</h3>
+        <p>A government observes that its AI governance infrastructure runs on platforms operated by foreign corporations under foreign jurisdiction. The regulatory authority is intact in statute. The visibility into the activity it regulates depends on a platform it does not control and cannot compel. Independent governance evidence, produced and stored on sovereign infrastructure, eliminates this dependency.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Insurance and liability</h3>
+        <p>An insurer underwriting AI liability needs to assess governance posture before issuing coverage, and needs verifiable evidence when a claim is filed. Self-attested governance records from the insured party's own platform do not survive actuarial scrutiny. Independently verifiable records, signed with the insured's own keys and verifiable offline by the insurer's assessors, change the evidentiary posture of the entire claim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container text-center">
+    <h2>Evaluating governance for a regulated deployment?</h2>
+    <p style="max-width: 560px; margin: 1rem auto 2rem; opacity: 0.85;">Run the open-source verifier against real evidence packs. Read the companion paper for the full architectural specification. Request a technical briefing for deployment-specific questions.</p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="/scarp-governance-gateway" class="btn btn-primary">See the product</a>
+      <a href="/contact" class="btn btn-outline">Request a briefing</a>
+    </div>
+  </div>
+</section>

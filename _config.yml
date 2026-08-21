@@ -1,0 +1,30 @@
+title: Scarp Protocol
+description: "Foundational infrastructure for governable AI. Four layers: Identity, Cooperation, Governance, Settlement."
+url: "https://scarpprotocol.com"
+baseurl: ""
+
+permalink: /insights/:title/
+
+collections:
+  posts:
+    output: true
+    permalink: /insights/:title/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+
+plugins:
+  - jekyll-seo-tag

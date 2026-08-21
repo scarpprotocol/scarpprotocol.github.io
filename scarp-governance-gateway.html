@@ -1,0 +1,344 @@
+---
+layout: default
+title: Scarp Governance Gateway
+description: "Independent governance gateway for enterprise AI agents. Intercepts every agent interaction, classifies content, evaluates policy, enforces decisions, and produces independently verifiable cryptographic evidence."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Layer 3: Governance</span>
+    <h1>Scarp Governance Gateway</h1>
+    <p class="lead">Independent governance gateway for enterprise AI agents. Every agent interaction is intercepted, classified, evaluated against policy, and decided in real time. Every decision produces a cryptographically signed evidence record the customer owns and any third party can verify.</p>
+  </div>
+</section>
+
+<!-- Hub and spoke architecture diagram -->
+<section class="section-light">
+  <div class="container">
+    <span class="eyebrow">Architecture</span>
+    <h2>Where the gateway sits.</h2>
+    <div class="section-intro">
+      <p>Scarp Governance Gateway operates as a stateless HTTPS proxy between agents and the AI providers, tools, and services they interact with. All traffic routes through the gateway. No agent reaches a provider or tool without producing a governed, signed evidence record.</p>
+    </div>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, sans-serif;">
+        <!-- Background -->
+        <rect width="900" height="420" fill="#F5F3EF" rx="4"/>
+
+        <!-- Customer tenant boundary -->
+        <rect x="30" y="20" width="840" height="380" rx="4" fill="none" stroke="#D4D0C8" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="50" y="44" font-size="11" fill="#6B6B6B" font-weight="600" letter-spacing="0.08em">CUSTOMER INFRASTRUCTURE</text>
+
+        <!-- Agents (left) -->
+        <rect x="60" y="80" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="140" y="108" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent A</text>
+        <rect x="60" y="148" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="140" y="176" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent B</text>
+        <rect x="60" y="216" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="140" y="244" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent C</text>
+        <text x="140" y="290" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.06em">AGENTS</text>
+
+        <!-- Gateway (center) -->
+        <rect x="320" y="70" width="260" height="240" rx="4" fill="#2A5A5E" stroke="#3A6B5E" stroke-width="2"/>
+        <text x="450" y="98" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Scarp Governance Gateway</text>
+
+        <!-- Gateway internal blocks -->
+        <rect x="340" y="112" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="450" y="131" text-anchor="middle" font-size="11" fill="#C4D8D0">Classify (PII / credentials / adversarial)</text>
+
+        <rect x="340" y="148" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="450" y="167" text-anchor="middle" font-size="11" fill="#C4D8D0">Evaluate policy (multi-dimensional)</text>
+
+        <rect x="340" y="184" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="450" y="203" text-anchor="middle" font-size="11" fill="#C4D8D0">Decide (ALLOW / BLOCK / HOLD)</text>
+
+        <rect x="340" y="220" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="450" y="239" text-anchor="middle" font-size="11" fill="#C4D8D0">Sign evidence (HSM Sign API)</text>
+
+        <rect x="340" y="256" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="450" y="275" text-anchor="middle" font-size="11" fill="#C4D8D0">Store pack (customer storage)</text>
+
+        <!-- Providers (right) -->
+        <rect x="680" y="80" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="760" y="108" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">AI Provider</text>
+        <rect x="680" y="148" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="760" y="176" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">MCP Tool Server</text>
+        <rect x="680" y="216" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="760" y="244" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">MCP Tool Server</text>
+        <text x="760" y="290" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.06em">PROVIDERS &amp; TOOLS</text>
+
+        <!-- Arrows: Agents → Gateway -->
+        <line x1="220" y1="104" x2="318" y2="160" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <line x1="220" y1="172" x2="318" y2="185" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <line x1="220" y1="240" x2="318" y2="210" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <text x="270" y="140" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
+
+        <!-- Arrows: Gateway → Providers -->
+        <line x1="582" y1="160" x2="678" y2="104" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <line x1="582" y1="185" x2="678" y2="172" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <line x1="582" y1="210" x2="678" y2="240" stroke="#6B8494" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <text x="635" y="140" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS / MCP</text>
+
+        <!-- Infrastructure below -->
+        <rect x="340" y="340" width="105" height="40" rx="3" fill="#C4A265" stroke="#A88B50"/>
+        <text x="392" y="365" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">HSM Key Store</text>
+
+        <rect x="455" y="340" width="105" height="40" rx="3" fill="#C4A265" stroke="#A88B50"/>
+        <text x="507" y="365" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">Evidence Store</text>
+
+        <!-- Arrows: Gateway → Infrastructure -->
+        <line x1="420" y1="310" x2="400" y2="338" stroke="#C4A265" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+        <line x1="480" y1="310" x2="500" y2="338" stroke="#C4A265" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+        <text x="390" y="330" font-size="9" fill="#C4A265" font-weight="500">Sign API</text>
+        <text x="495" y="330" font-size="9" fill="#C4A265" font-weight="500">Write</text>
+
+        <!-- Arrow markers -->
+        <defs>
+          <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#6B8494"/>
+          </marker>
+          <marker id="arrowGold" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#C4A265"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <p class="text-muted text-center" style="font-size: 0.85rem; margin-top: 0.5rem;">All components deploy inside the customer's own infrastructure. The private signing key never enters the gateway process. There is no vendor copy of data, evidence, or telemetry.</p>
+  </div>
+</section>
+
+<!-- Full governance surface -->
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Capabilities</span>
+    <h2>Full governance surface.</h2>
+    <div class="section-intro">
+      <p>Scarp Governance Gateway is a complete governance infrastructure, not an evidence tool. It classifies, evaluates, decides, and enforces before producing a signed evidence record. Every capability listed here is operational.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Content classification and DLP</h3>
+        <p>PII, PHI, financial data, credentials, and adversarial content detected on every request. Redaction applied before content reaches the provider when policy requires it. Custom detection patterns supported.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Five-scope emergency controls</h3>
+        <p>Immediate shutdown of governed agent activity at five granularity levels: global, provider, model, agent, and tool. Asymmetric authorization: instant activation, deliberate deactivation through the change advisory workflow.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Entity lifecycle management</h3>
+        <p>Providers, models, agents, tools, system identities, and policies are registered entities with default-deny posture. An unregistered entity produces an immediate BLOCK with a machine-readable reason code.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-dimensional policy evaluation</h3>
+        <p>Policy composed across content classification, entity status, kill switch state, credential exposure, and adversarial signals in a single evaluation per action. Eight governance decision types: ALLOW, BLOCK, HOLD, ATTEST, TAMPERED, CHAIN_INTEGRITY_UNVERIFIABLE, HOLD_QUEUE_SATURATED, POLICY_EVALUATION_ERROR.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-hop chain tracking</h3>
+        <p>Every workflow receives a gateway-generated identifier that links all evidence packs in a multi-step agent chain. The identifier is generated solely by the gateway and never accepted from agents. Chain integrity is cryptographically verifiable across hops.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Change advisory workflow</h3>
+        <p>Every change to governance configuration passes through a structured approval workflow. 27 administrative action types, each producing its own signed evidence record. The answer to "who governs the governance?"</p>
+      </div>
+      <div class="feature-card">
+        <h3>Credential and adversarial detection</h3>
+        <p>API keys, connection strings, tokens, and prompt injection attempts detected in real time. Adversarial content signals projected to the customer's monitoring infrastructure alongside the signed evidence record.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Budget enforcement</h3>
+        <p>Per-action spending limits enforced at the governance layer. The budget is a governance constraint, not a provider-side billing limit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Evidence independence -->
+<section class="section-light">
+  <div class="container">
+    <span class="eyebrow">Evidence independence</span>
+    <h2>Evidence the customer owns and anyone can verify.</h2>
+    <div class="section-intro">
+      <p>The structural property that separates Scarp Governance Gateway from every other governance system in the market. The evidence record belongs to the customer and stands on its own.</p>
+    </div>
+
+    <div class="flow-steps" style="border-color: var(--border-light);">
+      <div class="flow-step" style="border-color: var(--border-light);">
+        <div class="flow-number" style="color: var(--strata-teal);">1</div>
+        <div class="flow-content">
+          <div class="flow-label" style="color: var(--strata-teal);">Signing</div>
+          <h4 style="color: var(--text-on-light);">Customer-managed HSM, never the gateway.</h4>
+          <p style="color: var(--text-on-light-muted);">Every evidence record is signed via the customer's own hardware security module. The private key never leaves the HSM. It never enters the gateway's process memory. The gateway calls the HSM Sign API through a service identity; it never holds, sees, or caches the raw key material.</p>
+        </div>
+      </div>
+      <div class="flow-step" style="border-color: var(--border-light);">
+        <div class="flow-number" style="color: var(--strata-teal);">2</div>
+        <div class="flow-content">
+          <div class="flow-label" style="color: var(--strata-teal);">Storage</div>
+          <h4 style="color: var(--text-on-light);">Customer-controlled, write-once.</h4>
+          <p style="color: var(--text-on-light-muted);">Evidence packs are stored in the customer's own infrastructure, one pack per record, write-once, never modified. The customer can remove the gateway entirely and retain every piece of governance evidence produced. The evidence is self-contained, portable, and verifiable without any operational dependency on the gateway operator.</p>
+        </div>
+      </div>
+      <div class="flow-step" style="border-color: var(--border-light);">
+        <div class="flow-number" style="color: var(--strata-teal);">3</div>
+        <div class="flow-content">
+          <div class="flow-label" style="color: var(--strata-teal);">Verification</div>
+          <h4 style="color: var(--text-on-light);">Offline, independent, complete.</h4>
+          <p style="color: var(--text-on-light-muted);">Any third party with the public key and the evidence pack can verify the record on their own machine. No server to reach. No account to create. No callback to anyone. Change one field and verification fails. The verifier is open source and deterministic.</p>
+        </div>
+      </div>
+      <div class="flow-step" style="border-color: var(--border-light);">
+        <div class="flow-number" style="color: var(--strata-teal);">4</div>
+        <div class="flow-content">
+          <div class="flow-label" style="color: var(--strata-teal);">No vendor copy</div>
+          <h4 style="color: var(--text-on-light);">Zero telemetry. Zero aggregation.</h4>
+          <p style="color: var(--text-on-light-muted);">There is no aggregation service. There is no telemetry sent to the gateway operator or any third party. No phone-home. No cross-tenant data movement. The customer's governance data stays inside the customer's boundary.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Deployment and custody -->
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Deployment model</span>
+    <h2>Everything inside the customer's boundary.</h2>
+    <table class="custody-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Location</th>
+          <th>Leaves customer environment?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gateway runtime</td>
+          <td>Customer infrastructure</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Configuration</td>
+          <td>Customer infrastructure</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Evidence packs</td>
+          <td>Customer storage</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Signing keys</td>
+          <td>Customer HSM</td>
+          <td><span class="custody-check">No. Private key never leaves HSM.</span></td>
+        </tr>
+        <tr>
+          <td>Provider credentials</td>
+          <td>Customer key store</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Administrative interface</td>
+          <td>Customer infrastructure</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Operational logs</td>
+          <td>Customer infrastructure</td>
+          <td><span class="custody-check">No</span></td>
+        </tr>
+        <tr>
+          <td>Verifier (scarp-verify)</td>
+          <td>Auditor's machine (any platform)</td>
+          <td>N/A. Standalone binary, zero network dependency.</td>
+        </tr>
+        <tr>
+          <td>Cross-tenant telemetry</td>
+          <td>Does not exist</td>
+          <td>N/A. No aggregation, no phone-home.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- scarp-verify -->
+<section class="section-light-alt">
+  <div class="container">
+    <span class="eyebrow">Open verifier</span>
+    <h2>scarp-verify</h2>
+    <div class="section-intro">
+      <p>The open-source standalone verifier that answers the one question the architecture turns on: can an outside party confirm a governance record without trusting whoever produced it?</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Single-pack verification</h3>
+        <p>Verifies the cryptographic signature and content integrity of any individual evidence pack. Change one field and it fails.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Batch verification</h3>
+        <p>Verifies a corpus of evidence packs in a single pass. Reports per-pack and aggregate results.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Chain verification</h3>
+        <p>Verifies multi-hop workflow chains across evidence packs using cryptographic hash linkage. Confirms the chain is intact and correctly ordered.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Zero dependencies</h3>
+        <p>Static binary. Five platforms. No runtime, no framework, no network. Bring the pack and the public key. Run it on your machine.</p>
+      </div>
+    </div>
+    <p class="mt-3"><a href="https://github.com/scarpprotocol/scarp-verify" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--strata-teal); color: #fff;">View on GitHub</a></p>
+  </div>
+</section>
+
+<!-- Multi-agent coordination -->
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Design boundary</span>
+    <h2>Multi-agent coordination in V1.</h2>
+    <div class="section-intro">
+      <p>Scarp Governance Gateway V1 governs agent interactions with tools and providers through the MCP protocol. Agents do not communicate directly with each other. When Agent A needs a result from Agent B, both interact through MCP tool servers, and each interaction produces its own governed, signed evidence record.</p>
+    </div>
+    <div class="feature-grid" style="grid-template-columns: 1fr;">
+      <div class="feature-card">
+        <h3>Eight open questions blocking direct A2A delegation.</h3>
+        <p>Direct agent-to-agent delegation with governance preservation is V2 scope. Eight questions must be answered before it ships: liability attribution across organizational boundaries, cross-organizational trust establishment, delegation scope and constraint propagation, revocation propagation across agent chains, intent auditability for delegated actions, sensitivity ceiling inheritance, evidence chain continuity across trust domains, and policy reconciliation between organizations.</p>
+        <p class="mt-2">Each question maps to a specific Scarp substrate layer. Layer 3 (Governance) is shipped. The remaining questions sit in Layers 1 (Identity), 2 (Cooperation), and 4 (Settlement), and their answers are specified in the substrate architecture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Standards alignment -->
+<section class="section-light">
+  <div class="container">
+    <span class="eyebrow">Standards alignment</span>
+    <h2>Regulatory and framework alignment.</h2>
+    <div class="standards-bar">
+      <span class="standard-badge">EU AI Act (Art. 13-15)</span>
+      <span class="standard-badge">FRONTIER Act (IVO regime)</span>
+      <span class="standard-badge">NIST AI RMF 1.0</span>
+      <span class="standard-badge">OSAIA SAFE Framework</span>
+      <span class="standard-badge">HIPAA audit controls</span>
+      <span class="standard-badge">OSFI B-13</span>
+      <span class="standard-badge">PIPEDA accountability</span>
+      <span class="standard-badge">SEC / FINRA</span>
+    </div>
+    <p class="text-muted" style="font-size: 0.85rem;">Architectural alignment, not certification or compliance advice. None of these frameworks were drafted with autonomous agents in mind. All carry an assumption that becomes load-bearing the moment agents take consequential actions: the entity under scrutiny cannot be the sole author of the evidence used to judge it.</p>
+  </div>
+</section>
+
+<!-- Evaluation path -->
+<section class="section-accent">
+  <div class="container text-center">
+    <h2>Evaluate.</h2>
+    <p style="max-width: 560px; margin: 1rem auto 2rem; opacity: 0.85;">Run the verifier. Read the papers. Talk to us.</p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="https://github.com/scarpprotocol/scarp-verify" target="_blank" rel="noopener" class="btn btn-primary">Run the verifier</a>
+      <a href="/insights" class="btn btn-outline">Read the papers</a>
+      <a href="/contact" class="btn btn-outline">Request a briefing</a>
+    </div>
+  </div>
+</section>

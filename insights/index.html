@@ -1,0 +1,61 @@
+---
+layout: default
+title: Insights
+description: "Research papers, analysis, and commentary on AI governance, independent verification, agent identity, and the structural gaps in the current AI governance landscape."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Research &amp; analysis</span>
+    <h1>Insights</h1>
+    <p class="lead">Papers, analysis, and commentary on AI governance architecture, independent verification, and the structural gaps the market has not closed.</p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+
+    <div class="insight-list">
+
+      <!-- The Intelligent Economy paper -->
+      <div class="insight-item">
+        <div class="insight-meta">
+          <span class="insight-type">Paper</span> May 2026
+        </div>
+        <h3><a href="/insights/the-intelligent-economy">The Intelligent Economy: A Substrate Architecture</a></h3>
+        <p>Full architectural specification of the four-layer substrate: Identity, Cooperation, Governance, and Settlement. Walks the transition evidence, the incumbent landscape, the sovereignty dimension, and the foundational layers at a depth the companion paper deliberately does not attempt. The technical companion to the policy-level treatment.</p>
+      </div>
+
+      <!-- Companion paper -->
+      <div class="insight-item">
+        <div class="insight-meta">
+          <span class="insight-type">Paper</span> August 2026
+        </div>
+        <h3><a href="/insights/governable-ai-from-the-ground-up">Governable AI from the Ground Up: Identity, Cooperation, Governance, and Settlement as Foundational Infrastructure</a></h3>
+        <p>Policy-level treatment of the substrate architecture. Names the trust problem, shows why it cannot be solved by adding controls to the systems that produce it, describes the four-layer architecture, surveys the existing landscape, and demonstrates the working Governance layer implementation. <!-- <a href="#">Zenodo DOI</a> --></p>
+      </div>
+
+      <!-- Essay -->
+      <div class="insight-item">
+        <div class="insight-meta">
+          <span class="insight-type">Essay</span> August 2026
+        </div>
+        <h3><a href="/insights/the-ai-skeptics-are-right">The AI Skeptics Are Right, but They're Missing the Point</a></h3>
+        <p>The autonomous agent economy the largest companies are quietly building, and the one property it cannot open without. A deal each side can prove.</p>
+      </div>
+
+      <!-- Future posts will be listed here by Jekyll -->
+      {% for post in site.posts %}
+      <div class="insight-item">
+        <div class="insight-meta">
+          <span class="insight-type">{{ post.type | default: "Post" }}</span> {{ post.date | date: "%B %Y" }}
+        </div>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

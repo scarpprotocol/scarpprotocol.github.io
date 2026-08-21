@@ -1,0 +1,15 @@
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Scarp</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/the-problem" {% if page.url == '/the-problem.html' or page.url == '/the-problem' %}class="active"{% endif %}>The Problem</a></li>
+      <li><a href="/scarp-governance-gateway" {% if page.url contains 'scarp-governance-gateway' %}class="active"{% endif %}>Scarp Governance Gateway</a></li>
+      <li><a href="/use-cases" {% if page.url == '/use-cases.html' or page.url == '/use-cases' %}class="active"{% endif %}>Use Cases</a></li>
+      <li><a href="/insights" {% if page.url contains 'insights' %}class="active"{% endif %}>Insights</a></li>
+      <li><a href="/contact" {% if page.url == '/contact.html' or page.url == '/contact' %}class="active"{% endif %}>Contact</a></li>
+    </ul>
+  </nav>
+</header>

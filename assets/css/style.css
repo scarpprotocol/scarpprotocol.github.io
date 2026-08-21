@@ -1,0 +1,837 @@
+/* ==========================================================================
+   Scarp Protocol — Style
+   Palette derived from geological strata (escarpment hero image)
+   ========================================================================== */
+
+:root {
+  /* Geological palette */
+  --deep-slate: #1B2838;
+  --dark-teal: #2A4A4E;
+  --strata-teal: #3A6B5E;
+  --strata-blue: #6B8494;
+  --sandstone: #C4A265;
+  --sandstone-light: #D4B87A;
+
+  /* Functional colors */
+  --bg-dark: #1B2838;
+  --bg-dark-alt: #1F2F42;
+  --bg-light: #F5F3EF;
+  --bg-light-alt: #ECEAE4;
+  --text-on-dark: #E8E4DC;
+  --text-on-dark-muted: #9BA8B4;
+  --text-on-light: #2C2C2C;
+  --text-on-light-muted: #6B6B6B;
+  --border-light: #D4D0C8;
+  --border-dark: #2E4050;
+
+  /* Layer colors (mapped to strata) */
+  --layer-settlement: #1B2838;
+  --layer-governance: #2A5A5E;
+  --layer-cooperation: #6B8494;
+  --layer-identity: #C4A265;
+
+  /* Typography */
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --section-pad: 5rem;
+  --container-width: 1140px;
+  --container-narrow: 780px;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-on-light);
+  background: var(--bg-light);
+  line-height: 1.7;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--strata-teal);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover { color: var(--sandstone); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+h4 { font-size: 1.1rem; margin-bottom: 0.5rem; font-family: var(--font-body); font-weight: 600; }
+
+p { margin-bottom: 1.25rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ==========================================================================
+   Sections — alternating dark/light
+   ========================================================================== */
+
+.section-dark {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  padding: var(--section-pad) 0;
+}
+
+.section-dark a { color: var(--sandstone-light); }
+.section-dark a:hover { color: #E8CC8E; }
+.section-dark h2, .section-dark h3 { color: #fff; }
+.section-dark .text-muted { color: var(--text-on-dark-muted); }
+
+.section-dark-alt {
+  background: var(--bg-dark-alt);
+  color: var(--text-on-dark);
+  padding: var(--section-pad) 0;
+}
+.section-dark-alt a { color: var(--sandstone-light); }
+.section-dark-alt a:hover { color: #E8CC8E; }
+.section-dark-alt h2, .section-dark-alt h3 { color: #fff; }
+.section-dark-alt .text-muted { color: var(--text-on-dark-muted); }
+
+.section-light {
+  background: var(--bg-light);
+  color: var(--text-on-light);
+  padding: var(--section-pad) 0;
+}
+
+.section-light-alt {
+  background: var(--bg-light-alt);
+  color: var(--text-on-light);
+  padding: var(--section-pad) 0;
+}
+
+.section-accent {
+  background: var(--dark-teal);
+  color: var(--text-on-dark);
+  padding: var(--section-pad) 0;
+}
+.section-accent h2, .section-accent h3 { color: #fff; }
+.section-accent a { color: var(--sandstone-light); }
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(27, 40, 56, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.site-nav {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: 0.02em;
+}
+.nav-logo:hover { color: var(--sandstone-light) !important; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-on-dark-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  transition: 0.2s;
+}
+
+/* ==========================================================================
+   Hero — Landing page with escarpment background
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-dark);
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/hero-escarpment.jpg') center center / cover no-repeat;
+  opacity: 0.4;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 40, 56, 0.7) 0%,
+    rgba(27, 40, 56, 0.5) 50%,
+    rgba(27, 40, 56, 0.9) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3.25rem;
+  color: #fff;
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+.hero .lead {
+  font-size: 1.25rem;
+  color: var(--text-on-dark);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Page hero (non-landing pages) */
+.page-hero {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  padding: calc(var(--section-pad) + 64px) 0 var(--section-pad);
+}
+
+.page-hero h1 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.page-hero .lead {
+  font-size: 1.15rem;
+  color: var(--text-on-dark);
+  max-width: 640px;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--sandstone);
+  color: var(--bg-dark);
+}
+.btn-primary:hover {
+  background: var(--sandstone-light);
+  color: var(--bg-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-outline:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Four-layer substrate diagram
+   ========================================================================== */
+
+.layers-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin: 2rem auto;
+}
+
+.layer-band {
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 4px solid;
+}
+
+.layer-band:nth-child(1) {
+  background: rgba(196, 162, 101, 0.15);
+  border-color: var(--layer-identity);
+}
+.layer-band:nth-child(2) {
+  background: rgba(107, 132, 148, 0.15);
+  border-color: var(--layer-cooperation);
+}
+.layer-band:nth-child(3) {
+  background: rgba(42, 90, 94, 0.15);
+  border-color: var(--layer-governance);
+}
+.layer-band:nth-child(4) {
+  background: rgba(27, 40, 56, 0.25);
+  border-color: var(--layer-settlement);
+}
+
+.layer-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 140px;
+}
+
+.layer-desc {
+  font-size: 0.95rem;
+  color: var(--text-on-dark-muted);
+  flex: 1;
+}
+
+.layer-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.layer-status.shipped {
+  background: rgba(42, 90, 94, 0.3);
+  color: #7FC4A8;
+}
+.layer-status.specified {
+  background: rgba(107, 132, 148, 0.2);
+  color: var(--strata-blue);
+}
+
+/* ==========================================================================
+   Comparison table
+   ========================================================================== */
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-dark .comparison-table th {
+  border-bottom: 2px solid var(--border-dark);
+  color: var(--sandstone);
+}
+
+.section-light .comparison-table th {
+  border-bottom: 2px solid var(--border-light);
+  color: var(--text-on-light-muted);
+}
+
+.comparison-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+}
+
+.section-dark .comparison-table td {
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.section-light .comparison-table td {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comparison-table .gap-cell {
+  color: #C97A6A;
+}
+
+/* ==========================================================================
+   Feature grid (capabilities, use cases)
+   ========================================================================== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.75rem;
+  border-radius: 4px;
+}
+
+.section-dark .feature-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+}
+
+.section-light .feature-card,
+.section-light-alt .feature-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.section-dark .feature-card p {
+  color: var(--text-on-dark-muted);
+}
+
+.section-light .feature-card p,
+.section-light-alt .feature-card p {
+  color: var(--text-on-light-muted);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ==========================================================================
+   Hub-and-spoke SVG diagram
+   ========================================================================== */
+
+.diagram-container {
+  margin: 2.5rem auto;
+  max-width: 900px;
+  overflow-x: auto;
+}
+
+.diagram-container svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Worked example / flow
+   ========================================================================== */
+
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.flow-step {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.flow-step:not(:last-child) {
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.flow-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sandstone);
+  min-width: 3rem;
+  line-height: 1;
+  padding-top: 0.25rem;
+}
+
+.flow-content h4 {
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.flow-content p {
+  color: var(--text-on-dark-muted);
+  font-size: 0.95rem;
+}
+
+.flow-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--strata-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   Insights / blog listing
+   ========================================================================== */
+
+.insight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.insight-item {
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.section-light .insight-item {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.insight-item h3 a {
+  color: var(--text-on-light);
+}
+.insight-item h3 a:hover {
+  color: var(--strata-teal);
+}
+
+.insight-meta {
+  font-size: 0.85rem;
+  color: var(--text-on-light-muted);
+  margin-bottom: 0.5rem;
+}
+
+.insight-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  background: var(--bg-light-alt);
+  color: var(--text-on-light-muted);
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Post body
+   ========================================================================== */
+
+.post-body h2 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+}
+
+.post-body h3 {
+  margin-top: 2rem;
+}
+
+.post-body p {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--sandstone);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-on-light-muted);
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: var(--text-on-dark-muted);
+  margin-bottom: 0.5rem;
+}
+
+.post-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-on-dark-muted);
+  margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.contact-path {
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.section-light .contact-path {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.contact-path h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-email {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Standards alignment badges
+   ========================================================================== */
+
+.standards-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.standard-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.section-dark .standard-badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-dark);
+  color: var(--text-on-dark-muted);
+}
+
+.section-light .standard-badge {
+  background: var(--bg-light-alt);
+  border: 1px solid var(--border-light);
+  color: var(--text-on-light-muted);
+}
+
+/* ==========================================================================
+   Deployment custody table
+   ========================================================================== */
+
+.custody-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.custody-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--border-dark);
+  color: var(--sandstone);
+}
+
+.custody-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border-dark);
+  color: var(--text-on-dark-muted);
+}
+
+.custody-table td:first-child {
+  color: var(--text-on-dark);
+  font-weight: 500;
+}
+
+.custody-check {
+  color: #7FC4A8;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+
+.text-muted { color: var(--text-on-light-muted); }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 2rem; }
+
+.section-intro {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.section-intro p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.section-dark .section-intro p {
+  color: var(--text-on-dark-muted);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-dark .eyebrow { color: var(--sandstone); }
+.section-light .eyebrow { color: var(--strata-teal); }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 3rem;
+  }
+
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-dark);
+    padding: 1rem 2rem;
+    gap: 0.75rem;
+  }
+
+  .hero h1 { font-size: 2.25rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layer-band {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .layer-status { margin-left: 0; margin-top: 0.25rem; }
+
+  .flow-step { flex-direction: column; gap: 0.5rem; }
+
+  .comparison-table { font-size: 0.85rem; }
+  .comparison-table th, .comparison-table td { padding: 0.6rem 0.5rem; }
+}

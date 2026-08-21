@@ -1,0 +1,108 @@
+---
+layout: default
+title: The Problem
+description: "AI governance today is structurally self-attesting. The party whose conduct is in question holds the only record, signed with its own keys, on its own infrastructure. Scarp closes this structural gap."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">The structural argument</span>
+    <h1>The party that runs the AI is the sole author of the evidence used to judge it.</h1>
+    <p class="lead">This is not a criticism of any vendor's integrity. It is a description of the structural position every governance system in the market occupies today, and it applies to any first-party arrangement regardless of who operates it.</p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container container-narrow">
+    <h2>Three failure modes.</h2>
+    <p>The gap between governance and proof appears at three points in the lifecycle of every AI action. Each can be addressed in isolation. The result is three separate systems with no structural guarantee that all three were operating together at the moment of any given action.</p>
+
+    <h3 class="mt-3">Before the action.</h3>
+    <p>A deployer selects a model for a sensitive workflow. The model provider publishes safety evaluations, alignment benchmarks, and responsible-use documentation. None of it constitutes independent attestation. Every evaluation was conducted by the provider or by a party the provider selected and engaged, using criteria the provider defined. The deployer's question is not whether the provider is honest. The question is whether any independent party has certified this model as safe for the deployer's specific use case. No infrastructure exists to produce that certification.</p>
+
+    <h3 class="mt-3">During the action.</h3>
+    <p>Governance controls are running: content filters, guardrails, policy engines, input-output classifiers. These controls are genuine engineering achievements. They operate inside the model's own inference path or immediately adjacent to it, applied by the same system that is being governed. Runtime governance is probabilistic. The controls reduce the likelihood of a violation. They do not make violation structurally impossible, because the governed system and the governing system share a trust boundary.</p>
+
+    <h3 class="mt-3">After the action.</h3>
+    <p>The action has occurred. A record of what happened exists. That record was produced by the platform that took the action, stored on the platform's infrastructure, and where it is signed at all, signed with the platform's keys. The regulated party's compliance evidence is authored entirely by the regulated party. This is self-attestation. It does not require anyone to have acted in bad faith to be structurally inadequate. It requires only that the party holding the evidence had both the means and the motive to present it favorably, and that nothing in the arrangement rules that out.</p>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <span class="eyebrow">Market landscape</span>
+    <h2>Where existing systems stop.</h2>
+    <div class="section-intro">
+      <p>Every tier of the current market solves part of the problem. No tier closes the structural gap between governance and independently verifiable proof.</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Category</th>
+          <th style="width: 38%;">What it provides</th>
+          <th style="width: 40%;">Structural gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Platform-native governance</td>
+          <td>Policy enforcement, guardrails, audit logging within the vendor's own ecosystem</td>
+          <td class="gap-cell">Evidence produced, stored, and signed by the platform whose conduct is under review. Self-attestation by definition.</td>
+        </tr>
+        <tr>
+          <td>Security platforms</td>
+          <td>Threat detection, model scanning, prompt filtering, security posture management</td>
+          <td class="gap-cell">"Was there an attack?" is not the same question as "can you prove your agents operated within their authorized parameters?"</td>
+        </tr>
+        <tr>
+          <td>Agent identity</td>
+          <td>Authentication, access management, workload identity for AI agents</td>
+          <td class="gap-cell">Solves who the agent is and what it can access. Does not govern what the agent does after it gains access.</td>
+        </tr>
+        <tr>
+          <td>Policy-as-code / OPA</td>
+          <td>Declarative rules, drift alerts, compliance checks</td>
+          <td class="gap-cell">Advisory and runtime binding. Does not produce evidence a third party can verify without trusting the operator.</td>
+        </tr>
+        <tr>
+          <td>Open governance toolkits</td>
+          <td>Policy enforcement, audit logging, identity primitives as components</td>
+          <td class="gap-cell">Signing keys held in application process memory. Evidence held by the operator. No operator accountability. A library is a starting point, not a deployable governance system.</td>
+        </tr>
+        <tr>
+          <td>Logging / SIEM</td>
+          <td>Event capture, anomaly detection, forensic analysis</td>
+          <td class="gap-cell">Logs can be altered or deleted. Event capture is not governance evidence.</td>
+        </tr>
+        <tr>
+          <td>TEE / hardware attestation</td>
+          <td>Hardware-isolated execution, tamper-evident measurement</td>
+          <td class="gap-cell">Verification depends on vendor attestation infrastructure. Does not solve the full governance lifecycle above the execution boundary.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container container-narrow">
+    <h2>The auditor analogy.</h2>
+    <p>Every public company faces a version of this problem and settled it a century ago. A company does not audit its own books. The auditor's independence was made a structural requirement, written into securities law, after enough decades of watching what a self-checked opinion is worth when something goes wrong.</p>
+    <p>Independence has to be structural. The auditor's incentives, access, and tools sit outside the company being audited. A careful internal process is not a substitute, because the question is never only whether the work was honest. It is whether an outside party can rely on it.</p>
+    <p>Agent governance has arrived at the same problem without the hundred years of hindsight. When a single vendor supplies the agent, supplies the layer that governs the agent, and supplies the system that records what that layer decided, the evidence and the conduct it describes share one root of trust. The honest answers to "who outside the vendor has seen this evidence" and "who could have changed it" are <em>no one</em> and <em>the vendor</em>. That is enough to move the records from proof to assertion, without anyone alleging a thing.</p>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container container-narrow">
+    <h2>The structural answer.</h2>
+    <p>The alternative is an architecture in which the identity of every participant is established before the action, governance is evaluated outside the agent's reach during the action, and the evidence is recorded in independently verifiable form at the moment of the action, as structural properties of the infrastructure the AI runs on.</p>
+    <p>Four foundational layers operating together produce this result: Identity, Cooperation, Governance, and Settlement. The substrate does not make AI safe. It makes AI governable, so that every participant who needs to verify what an AI system is, what it did, under what rules, with what authority, can do so on their own infrastructure, without trusting the governed party's systems.</p>
+    <p>The Governance layer ships today as Scarp Governance Gateway. The remaining layers are specified in full architectural detail.</p>
+    <div class="mt-3">
+      <a href="/scarp-governance-gateway" class="btn btn-primary">See the Governance layer</a>
+      <a href="/insights" class="btn btn-outline" style="margin-left: 1rem;">Read the full papers</a>
+    </div>
+  </div>
+</section>
