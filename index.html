@@ -10,7 +10,7 @@ description: "Scarp is a four-layer protocol substrate that makes AI structurall
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>The infrastructure that makes AI governable.</h1>
-    <p class="lead">Every participant in the AI economy needs to verify what an AI system is, what it did, under what rules, and with what authority. No production system in the world today can answer all four questions. Scarp is the substrate that closes that gap.</p>
+    <p class="lead">The AI economy is being built without the foundational infrastructure it requires. Scarp is a four-layer protocol substrate that closes the gap. Identity, Cooperation, Governance, and Settlement, operating together, produce AI that is governable as a structural property of the infrastructure it runs on.</p>
     <div class="hero-actions">
       <a href="/the-problem" class="btn btn-primary">Read the argument</a>
       <a href="/scarp-governance-gateway" class="btn btn-outline">See what ships today</a>
@@ -21,12 +21,12 @@ description: "Scarp is a four-layer protocol substrate that makes AI structurall
 <!-- Four trust questions -->
 <section class="section-light">
   <div class="container">
-    <span class="eyebrow">The structural gap</span>
+    <span class="eyebrow">The Structural Gap</span>
     <h2>Four questions no production system answers.</h2>
     <div class="section-intro">
       <p>A hospital deploying AI for radiology triage, a defense ministry running agents on classified networks, a manufacturer sourcing an open-weight model for supply-chain optimization, and a sovereign government whose enforcement authority runs on platforms it does not control all face the same four questions.</p>
     </div>
-    <div class="feature-grid">
+    <div class="feature-grid-2x2">
       <div class="feature-card">
         <span class="feature-icon">1</span>
         <h3>Identity</h3>
@@ -54,29 +54,29 @@ description: "Scarp is a four-layer protocol substrate that makes AI structurall
 <!-- Four-layer substrate -->
 <section class="section-dark">
   <div class="container">
-    <span class="eyebrow">The substrate</span>
+    <span class="eyebrow">The Substrate</span>
     <h2>Four foundational layers.</h2>
     <div class="section-intro">
-      <p>Scarp is a protocol substrate with four independently transactable layers. Together they produce AI that is 100% governable as a structural property of the infrastructure it runs on. The same architecture serves every participant, from individual users to sovereign governments, because the trust problem is structurally identical at every scale.</p>
+      <p>The internet was built from foundational protocols: DNS, TCP/IP, TLS. Each solved a structural problem that could not have been retrofitted after the fact without enormous cost. The AI economy faces the same inflection. The protocols forming today solve how agents communicate. They do not solve how agents are identified across organizational boundaries, how they form binding agreements, how their actions are governed with independently verifiable evidence, or how value moves between them with full provenance. Those are substrate problems. Scarp is the substrate.</p>
     </div>
     <div class="layers-diagram">
       <div class="layer-band">
-        <span class="layer-name" style="color: var(--layer-identity);">Identity</span>
+        <span class="layer-name" style="color: var(--sandstone);">Identity</span>
         <span class="layer-desc">Every participant is identifiable, verifiable, and accountable. Agents, models, humans, organizations, machines, and data. Each carries a governance scope that travels with it.</span>
         <span class="layer-status specified">Specified</span>
       </div>
       <div class="layer-band">
-        <span class="layer-name" style="color: var(--layer-cooperation);">Cooperation</span>
+        <span class="layer-name" style="color: var(--strata-blue);">Cooperation</span>
         <span class="layer-desc">Participants discover each other, negotiate binding agreements, execute joint work with independent enforcement, and resolve disputes. The lifecycle from first contact through completion.</span>
         <span class="layer-status specified">Specified</span>
       </div>
       <div class="layer-band">
-        <span class="layer-name" style="color: var(--layer-governance);">Governance</span>
+        <span class="layer-name" style="color: #4A9A8E;">Governance</span>
         <span class="layer-desc">Every action is accountable to the parties whose authority is in scope. Policy bound to identity. Evidence produced at the moment of the action. Independently verifiable after the fact.</span>
         <span class="layer-status shipped">Shipped</span>
       </div>
       <div class="layer-band">
-        <span class="layer-name" style="color: var(--text-on-dark);">Settlement</span>
+        <span class="layer-name" style="color: #9AAAB8;">Settlement</span>
         <span class="layer-desc">Governed economic transactions with mandatory governance evidence as a prerequisite. Technology-agnostic settlement across payment rails, smart contracts, and traditional clearing.</span>
         <span class="layer-status specified">Specified</span>
       </div>
@@ -84,54 +84,76 @@ description: "Scarp is a four-layer protocol substrate that makes AI structurall
   </div>
 </section>
 
-<!-- What ships today -->
+<!-- Layer descriptions -->
 <section class="section-light">
   <div class="container">
-    <span class="eyebrow">Layer 3: Governance</span>
-    <h2>Scarp Governance Gateway ships the Governance layer.</h2>
+    <span class="eyebrow">What Each Layer Carries</span>
+    <h2>Infrastructure that cannot be retrofitted.</h2>
     <div class="section-intro">
-      <p>Scarp Governance Gateway is a production-grade implementation of the deployer-layer governance infrastructure. It intercepts every AI agent interaction, classifies content, evaluates policy, enforces governance decisions in real time, and produces cryptographically signed evidence for every decision. The evidence is signed with the customer's own keys held in their own hardware security module. The private key never enters the gateway process.</p>
+      <p>Each layer addresses a structural requirement that the AI economy cannot function without. The layers are independently transactable and together produce governable AI at every scale, from a single agent to cross-jurisdictional multi-party workflows. The full architectural specification is published in the companion papers.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Full governance surface</h3>
-        <p>Content classification and DLP. Credential and adversarial prompt detection. Multi-scope emergency controls. Per-action policy evaluation. Entity lifecycle management. Multi-hop chain tracking. Budget enforcement. Change advisory workflow.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Evidence independence</h3>
-        <p>Evidence signed with customer-managed HSM keys. Stored in customer-controlled storage. No vendor copy. No telemetry. Offline verification by any third party with the public key. The operator never holds the evidence and never touches the signing keys.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Open verifier</h3>
-        <p>scarp-verify is a standalone binary with zero external dependencies. It checks any Scarp Governance Gateway evidence record offline, with no callback to anyone. Apache-2.0 licensed. Five platforms. Deterministic.</p>
-      </div>
+
+    <div class="layer-detail" style="border-bottom: 1px solid var(--border-light);">
+      <h3><span class="layer-status specified">Specified</span> Identity</h3>
+      <p>Every participant in the AI economy has to be identifiable, verifiable, and accountable. The set of participants is larger than most governance discussions acknowledge: AI systems and the models that power them carry different certifications and different provenance. Human principals, organizations at every scale, physical machines operating autonomously, and certified data all require verifiable identity. A dataset's provenance, chain of custody, and jurisdictional admissibility are identity questions. The substrate treats them as such.</p>
+      <p>No identity infrastructure in production today covers the full set. Vendor-specific agent identity systems cover agents inside a single platform. SPIFFE and certificate authorities cover workload and increasingly agent identity within defined trust domains. Neither answers the question: can a third party in a different organization, on a different cloud, in a different jurisdiction, verify who this agent is, what it is certified to do, and whether it is currently authorized to act?</p>
     </div>
-    <p class="mt-3"><a href="/scarp-governance-gateway" class="btn btn-primary" style="background: var(--strata-teal); color: #fff;">Full product details</a></p>
+
+    <div class="layer-detail" style="border-bottom: 1px solid var(--border-light);">
+      <h3><span class="layer-status specified">Specified</span> Cooperation</h3>
+      <p>Two participants that can identify each other still cannot transact, coordinate, or compose into joint work without infrastructure for discovery, agreement, governed execution, and dispute resolution. The internet solved how machines find each other and exchange traffic. It does not solve how autonomous actors under principal-bound authority find each other, reach binding agreements, and execute those agreements across organizational lines.</p>
+      <p>The cooperation layer carries the full lifecycle: from a procurement agent discovering potential suppliers, through governed negotiation where each message is evaluated against the sender's policies, to binding contract formation where both parties hold independently verifiable records of what was agreed.</p>
+    </div>
+
+    <div class="layer-detail" style="border-bottom: 1px solid var(--border-light);">
+      <h3><span class="layer-status shipped">Shipped</span> Governance</h3>
+      <p>Governance makes every action accountable to the parties whose authority or interest is in scope. Policy is bound to identity. The governance evaluation happens outside the agent's reach. The evidence is recorded in independently verifiable form at the moment of the action. These three properties together produce runtime governance that is structural rather than probabilistic.</p>
+      <p>Scarp Governance Gateway is a production-grade implementation of the Governance layer. It intercepts every AI agent interaction, classifies content, evaluates policies, enforces decisions in real time, and produces cryptographically signed evidence for every governed action. <a href="/scarp-governance-gateway">Full product details.</a></p>
+    </div>
+
+    <div class="layer-detail">
+      <h3><span class="layer-status specified">Specified</span> Settlement</h3>
+      <p>The AI economy produces transactions at a volume, speed, and frequency beyond what any human-paced settlement infrastructure was built to carry. The substrate's settlement layer carries those transactions with identity anchoring at both ends, structural escrow guarantees, full provenance into the ledger, and dispute resolution grounded in the independently verifiable evidence the governance layer produced at every step.</p>
+      <p>Regulatory oversight is a structural property: tax remittance, sanctions enforcement, and consumer protection are calculated and directed at settlement time, as part of the transaction, rather than chased after the fact through reporting obligations the activity may have outrun.</p>
+    </div>
   </div>
 </section>
 
 <!-- Regulatory convergence -->
 <section class="section-dark-alt">
   <div class="container">
-    <span class="eyebrow">Regulatory convergence</span>
-    <h2>Three frameworks. One structural gap.</h2>
+    <span class="eyebrow">Regulatory Convergence</span>
+    <h2>Three frameworks. One structural dependency.</h2>
     <div class="section-intro">
-      <p>Three regulatory and strategic frameworks, drafted independently, from different starting assumptions, for different audiences, each arrive at the same structural dependency: every framework assumes governance infrastructure that can verify AI behavior independently of the parties whose behavior is being verified.</p>
+      <p>Three regulatory and strategic frameworks, drafted independently, from different starting assumptions, for different audiences, each arrive at the same structural dependency: governance infrastructure whose evidence can be trusted by parties who did not produce it.</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
         <h3>EU AI Act</h3>
-        <p>Mandates documented, auditable evidence of how high-risk AI systems are governed. The Digital Omnibus deferred standalone obligations to December 2027. The stated reason: the governance tooling does not yet exist.</p>
+        <p>Mandates documented, auditable evidence of how high-risk AI systems are governed. The Digital Omnibus deferred standalone obligations to December 2027. The stated reason: the governance tooling does not yet exist. The obligation did not change. The infrastructure to meet it does not exist.</p>
       </div>
       <div class="feature-card">
         <h3>FRONTIER Act</h3>
-        <p>Creates a licensed Independent Verification Organization regime with a statutory requirement that licensed verifiers maintain adequate independence from the artificial intelligence industry. The first legislative artifact anywhere that instantiates independent verification as a licensed, regulated function.</p>
+        <p>Creates a licensed Independent Verification Organization regime with a statutory requirement that licensed verifiers maintain adequate independence from the artificial intelligence industry. The first legislative artifact anywhere that instantiates independent verification as a licensed, regulated function at statute level.</p>
       </div>
       <div class="feature-card">
         <h3>IAPS Strategic Visions</h3>
-        <p>Maps nine strategic visions for navigating powerful AI. All nine converge on a shared structural dependency: governance infrastructure that can verify AI behavior independently. The infrastructure is the bottleneck.</p>
+        <p>Maps nine strategic visions for navigating powerful AI. The visions differ on government involvement, centralization, and geopolitics. They converge on a shared structural dependency: governance infrastructure that can verify AI behavior independently. That infrastructure is the bottleneck. No vision works without it.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- No telemetry thesis -->
+<section class="section-light-alt">
+  <div class="container">
+    <span class="eyebrow">Deployment Architecture</span>
+    <h2>Why the Governance layer deploys inside the customer's infrastructure.</h2>
+    <div class="section-intro">
+      <p>Most AI governance deploys as SaaS. AI governance evidence is a different category of data from CRM records or IT service tickets. It contains the full request and response payloads of every AI interaction: the questions asked, the answers given, the policies evaluated, the decisions rendered.</p>
+    </div>
+    <p>When Company A sends Company B's data through a SaaS AI governance vendor, Company A may breach its data-handling obligations to Company B. Company B's agreement with Company A does not contemplate a third-party SaaS vendor processing that data for AI governance purposes. The contractual framework between Company A and the SaaS vendor does not cure a contractual violation between Company A and Company B. The data protection agreements and sub-processor frameworks that authorize SaaS data processing were not built for AI governance evidence.</p>
+    <p>Scarp Governance Gateway deploys inside the customer's own infrastructure. The gateway runtime, all configuration, all evidence records, all signing keys, all provider credentials, and all operational logs reside in the customer's environment. There is no aggregation service. There is no telemetry sent to the gateway operator or any third party. The customer can remove the gateway entirely and retain every piece of governance evidence produced.</p>
   </div>
 </section>
 
@@ -139,7 +161,7 @@ description: "Scarp is a four-layer protocol substrate that makes AI structurall
 <section class="section-accent">
   <div class="container text-center">
     <h2>The governance is real. The evidence of governance is a promise.</h2>
-    <p style="max-width: 600px; margin: 1.5rem auto; opacity: 0.85; font-size: 1.1rem;">Scarp closes the gap between governance and proof. Read the structural argument, inspect the working implementation, or request a technical briefing.</p>
+    <p style="max-width: 640px; margin: 1.5rem auto; opacity: 0.85; font-size: 1.1rem;">Scarp closes the gap between governance and proof. Read the structural argument, inspect the working implementation, or request a technical briefing.</p>
     <div class="hero-actions" style="justify-content: center;">
       <a href="/the-problem" class="btn btn-primary">Read the argument</a>
       <a href="/contact" class="btn btn-outline">Request a briefing</a>
