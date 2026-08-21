@@ -451,7 +451,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .layer-status.shipped {
-  background: #2A5A5E;
+  background: #2E8B57;
   color: #fff;
 }
 .layer-status.specified {
