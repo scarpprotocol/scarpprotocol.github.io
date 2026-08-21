@@ -1,39 +1,99 @@
 ---
 layout: default
 title: The Problem
-description: "AI governance today is structurally self-attesting. The party whose conduct is in question holds the only record, signed with its own keys, on its own infrastructure. Scarp closes this structural gap."
+description: "The AI economy is being built on incomplete infrastructure. No substrate exists for cross-organizational identity, machine-speed cooperation, independently verifiable governance, or governed settlement."
 ---
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">The structural argument</span>
-    <h1>The party that runs the AI is the sole author of the evidence used to judge it.</h1>
-    <p class="lead">This is not a criticism of any vendor's integrity. It is a description of the structural position every governance system in the market occupies today, and it applies to any first-party arrangement regardless of who operates it.</p>
+    <span class="eyebrow">The Structural Argument</span>
+    <h1>The cost of getting this wrong is higher than the cost of getting the internet wrong was</h1>
+    <p class="lead">The internet protocol was not designed with security in mind. Authentication, confidentiality, and trust were not properties of the layer. They were added later, by other parties, on top. The firewall industry exists because of that omission. So does the entire enterprise security stack: intrusion detection, web application firewalls, secure web gateways, zero-trust overlays, identity-aware proxies, and a global market that now spends well over two hundred billion dollars a year retrofitting security onto a substrate that was never designed to carry it.</p>
   </div>
 </section>
 
 <section class="section-light">
   <div class="container container-narrow">
-    <h2>Three failure modes.</h2>
-    <p>The gap between governance and proof appears at three points in the lifecycle of every AI action. Each can be addressed in isolation. The result is three separate systems with no structural guarantee that all three were operating together at the moment of any given action.</p>
-
-    <h3 class="mt-3">Before the action.</h3>
-    <p>A deployer selects a model for a sensitive workflow. The model provider publishes safety evaluations, alignment benchmarks, and responsible-use documentation. None of it constitutes independent attestation. Every evaluation was conducted by the provider or by a party the provider selected and engaged, using criteria the provider defined. The deployer's question is not whether the provider is honest. The question is whether any independent party has certified this model as safe for the deployer's specific use case. No infrastructure exists to produce that certification.</p>
-
-    <h3 class="mt-3">During the action.</h3>
-    <p>Governance controls are running: content filters, guardrails, policy engines, input-output classifiers. These controls are genuine engineering achievements. They operate inside the model's own inference path or immediately adjacent to it, applied by the same system that is being governed. Runtime governance is probabilistic. The controls reduce the likelihood of a violation. They do not make violation structurally impossible, because the governed system and the governing system share a trust boundary.</p>
-
-    <h3 class="mt-3">After the action.</h3>
-    <p>The action has occurred. A record of what happened exists. That record was produced by the platform that took the action, stored on the platform's infrastructure, and where it is signed at all, signed with the platform's keys. The regulated party's compliance evidence is authored entirely by the regulated party. This is self-attestation. It does not require anyone to have acted in bad faith to be structurally inadequate. It requires only that the party holding the evidence had both the means and the motive to present it favorably, and that nothing in the arrangement rules that out.</p>
+    <h2>The agentic substrate is not the internet's problem repeated. It is worse</h2>
+    <p>The internet without security still ran, and security got bolted on at substantial but recoverable cost. The agentic substrate without identity, governed cooperation, accountable governance, and identity-anchored settlement does not just run insecurely. It runs without anyone being accountable for what an agent does, without verifiable evidence of what happened, without a way to enforce the laws that every other layer of the economy operates under, and without a way for any counterparty to know whether the agent on the other end of an interaction is real, authorized, or trustworthy.</p>
+    <p>The protocols forming today solve how agents communicate. They do not solve how agents are identified across organizational boundaries, how they form binding agreements at machine speed, how every action is governed with independently verifiable evidence, or how value moves between them with full provenance. Those are substrate problems. No product that sits above them can close them. Four layers of infrastructure are missing.</p>
   </div>
 </section>
 
+<!-- Layer 1: Identity -->
 <section class="section-dark">
+  <div class="container container-narrow">
+    <span class="eyebrow">Missing Layer</span>
+    <h2>Identity: no one can verify who this agent is, what it is certified to do, or whether its data can be trusted</h2>
+    <p>Every participant in the AI economy needs to be identifiable, verifiable, and accountable. The set of participants is larger than most discussions acknowledge: AI agents, the models that power them, human principals, organizations, physical machines operating autonomously, and certified datasets. Each carries different provenance, different certifications, and different authority. The identity layer addresses all of them.</p>
+
+    <h3 class="mt-3">Agent and organizational identity</h3>
+    <p>No identity infrastructure in production today covers the full set. Vendor-specific agent identity systems cover agents inside a single platform. SPIFFE and certificate authorities cover workload identity within defined trust domains. Neither answers the question that matters at the point where organizations meet: can a third party in a different organization, on a different cloud, in a different jurisdiction, verify who this agent is, what authority it carries, and whether it is currently authorized to act?</p>
+    <p>Without cross-organizational identity, delegation has no verifiable chain. A principal authorizes an agent. That agent delegates to a second agent in a different organization. The second agent delegates to a third. Nothing in the infrastructure today allows a counterparty to verify the chain from the third agent back to the original principal, confirm the constraints that were supposed to travel with each delegation, or verify that none of those delegations have been revoked.</p>
+
+    <h3 class="mt-3">Model certification</h3>
+    <p>Governments are already beginning to require independent evaluation of AI models. The EU AI Act mandates documented evidence of how high-risk systems are governed. The US Commerce Department has taken enforcement action related to model safety evaluations. These are early signs that the industry and regulators understand the need. The infrastructure to meet it does not exist.</p>
+    <p>No independent party can verify at runtime which version of a model is actually executing. A deployer selects a model for a sensitive workflow. The model provider publishes safety evaluations and alignment benchmarks. Every evaluation was conducted by the provider or by a party the provider selected, using criteria the provider defined. Whether any independent body has certified this specific model version as safe for this specific use case in this specific jurisdiction is a question no infrastructure can answer today. The identity layer treats model certification as an identity question: a verifiable credential bound to a specific model checkpoint, issued by an independent certification authority, checkable by any deployer or counterparty before use, revocable when conditions change.</p>
+
+    <h3 class="mt-3">Data provenance</h3>
+    <p>A dataset's provenance, chain of custody, and jurisdictional admissibility are identity questions. An agent constructing a risk assessment consumes data from multiple providers across jurisdictions. State-level adversaries may be forging data attestations. Sensor data from IoT devices carries different trust profiles from curated enterprise datasets. The identity layer binds data to its source with verifiable provenance so that governance policies can evaluate trust at the point of consumption, not after the fact.</p>
+
+    <p class="mt-3">The identity layer resolves a fundamental question about trust: can we trust the agent we discovered, or the agent from a partner's organization, or the specific model we chose for a workflow, or the data we consume? Without verified identity for every participant type, that question has no structural answer.</p>
+  </div>
+</section>
+
+<!-- Layer 2: Cooperation -->
+<section class="section-light">
+  <div class="container container-narrow">
+    <span class="eyebrow">Missing Layer</span>
+    <h2>Cooperation: no infrastructure for machine-speed agreements</h2>
+    <p>Two participants that can identify each other still cannot transact. The internet solved how machines find each other and exchange traffic. It did not solve how autonomous actors under principal-bound authority find each other, negotiate binding agreements, execute joint work with independent enforcement, and resolve disputes.</p>
+
+    <h3 class="mt-3">The gap between communication and cooperation</h3>
+    <p>In the human economy, a manufacturer's procurement team negotiates with three suppliers. Each negotiation follows a structured process: request for proposal, evaluation, contract terms, binding agreement, performance monitoring, dispute resolution. The infrastructure for this exists across contract law, courts, escrow services, insurance, and arbitration.</p>
+    <p>In the agent economy, a procurement agent calls three supplier APIs. The entire transaction collapses into a single pattern: API call, terms-of-service acceptance, payment. No structured negotiation. No binding bilateral agreement where both parties hold independently verifiable records of what was agreed. No escrow mechanism. No warranty. No dispute resolution protocol. When a supplier's agent delivers a result that does not match expectations, there is no independently verifiable record of what was agreed because no agreement infrastructure existed to produce one.</p>
+
+    <h3 class="mt-3">Consumer exposure</h3>
+    <p>A household agent managing energy contracts, insurance renewals, and subscription services negotiates on behalf of the household, commits to contracts, and makes payments. Consumer protection law assumes a human made each decision. When an agent acts, who is liable? What evidence exists that the agent operated within the household's authorized parameters? No infrastructure answers these questions today.</p>
+
+    <h3 class="mt-3">What cooperation infrastructure carries</h3>
+    <p>Machine-speed cooperation at scale requires infrastructure for the full lifecycle: discovery across organizations and jurisdictions, capability advertisement under controlled disclosure, governed negotiation where each message is evaluated against the sender's policies, binding contract formation where both parties' authority must be satisfied independently before any joint commitment exists, governed execution with bilateral enforcement at each step, and dispute resolution grounded in evidence both parties can trust.</p>
+  </div>
+</section>
+
+<!-- Layer 3: Governance -->
+<section class="section-dark">
+  <div class="container container-narrow">
+    <span class="eyebrow">Missing Layer</span>
+    <h2>Governance: controls that cannot prove they were running</h2>
+    <p>Governance controls exist today: content filters, guardrails, policy engines, classification systems, kill switches, access control lists. These are genuine engineering achievements. The gap is not in the controls themselves. The gap is in three structural properties that no production system provides together.</p>
+    <p>First, the governance evaluation needs to happen outside the agent's reach. When the governed system and the governing system share a trust boundary, runtime governance is probabilistic. The controls reduce the likelihood of a violation. They do not make violation structurally impossible.</p>
+    <p>Second, the evidence of governance needs to be produced at the moment of the action, not reconstructed afterward from logs. Logs can be altered or deleted. A log entry is not a governance record. A governance record is a cryptographically signed artifact that captures the complete context of the decision: who asked, what was asked, what classification was applied, what policies were evaluated, what decision was rendered, and what action was taken.</p>
+    <p>Third, the evidence needs to be independently verifiable. The party whose conduct is under review cannot be the sole author of the evidence used to judge it. This is not a criticism of any vendor's integrity. It is a structural position. When a single vendor supplies the agent, supplies the layer that governs the agent, and supplies the system that records what that layer decided, the evidence and the conduct it describes share one root of trust. That is self-attestation. It is structurally inadequate regardless of whether anyone acted in bad faith.</p>
+    <p>Bolting each of these on individually is how the internet's security gap was addressed: firewalls for the perimeter, intrusion detection for the runtime, forensic logging for the post-incident. Decades of engineering and hundreds of billions of dollars in annual spending later, the gap is still being chased, because the properties were never structural.</p>
+    <p>Full governance is broader than evidence. Classification, data loss prevention, emergency kill switches at multiple scopes, identity-bound access control, budget enforcement, credential detection, adversarial prompt detection, multi-hop chain tracking: all of these need to operate as structural properties of the infrastructure, not as features bolted onto individual products.</p>
+  </div>
+</section>
+
+<!-- Layer 4: Settlement -->
+<section class="section-light">
+  <div class="container container-narrow">
+    <span class="eyebrow">Missing Layer</span>
+    <h2>Settlement: no governed path from action to financial outcome</h2>
+    <p>The AI economy produces transactions at a volume, speed, and frequency beyond what any human-paced settlement infrastructure was built to carry. Card networks process hundreds of millions of transactions daily. Agent-to-agent transactions at machine speed exceed that by orders of magnitude.</p>
+    <p>Existing payment rails (card networks, ACH, wire transfers) handle human-speed transactions with human dispute resolution. Blockchain-based settlement handles machine-speed transactions without governance provenance. Payment companies have started building agent payment infrastructure, and major platforms have launched agentic commerce protocols. Payment rails are forming. Nobody is building the layer that ensures a transaction is authorized by governance policy, attributable to a verified identity, and compliant with jurisdictional requirements before the money moves.</p>
+    <p>When a software purchase agent buys a license on behalf of an enterprise and the software fails to perform as specified, the human world has purchase orders, warranty claims, and refund processes. The agent world has an API call, a terms-of-service acceptance, and an irreversible payment. The settlement layer is also about signaling seriousness: an agent without verified spending authority or governance clearance cannot initiate negotiations at the protocol level. This is similar to the problem of time-wasters and scammers on consumer marketplaces. The right infrastructure eliminates them at the protocol level, enabling a faster and more trusted economy.</p>
+    <p>Settlement without governance provenance means financial transactions detach from the evidence of what was agreed and what was delivered. Regulatory oversight (tax remittance, sanctions enforcement, consumer protection) becomes a reporting obligation chased after the fact rather than a structural property of the transaction itself.</p>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section class="section-dark-alt">
   <div class="container">
-    <span class="eyebrow">Market landscape</span>
-    <h2>Where existing systems stop.</h2>
+    <span class="eyebrow">Market Landscape</span>
+    <h2>Where existing systems stop</h2>
     <div class="section-intro">
-      <p>Every tier of the current market solves part of the problem. No tier closes the structural gap between governance and independently verifiable proof.</p>
+      <p>Every tier of the current market solves part of the problem. No tier addresses the substrate.</p>
     </div>
 
     <table class="comparison-table">
@@ -58,7 +118,17 @@ description: "AI governance today is structurally self-attesting. The party whos
         <tr>
           <td>Agent identity</td>
           <td>Authentication, access management, workload identity for AI agents</td>
-          <td class="gap-cell">Solves who the agent is and what it can access. Does not govern what the agent does after it gains access.</td>
+          <td class="gap-cell">Solves who the agent is within a single platform or trust domain. Does not extend across organizational boundaries. Does not certify models, data, or agent capabilities independently.</td>
+        </tr>
+        <tr>
+          <td>Agent-to-agent protocols</td>
+          <td>Structured communication between agents across platforms (e.g., Google A2A, MCP)</td>
+          <td class="gap-cell">Defines how agents communicate. Does not define how their interactions are governed: who is authorized to cooperate with whom, under what terms, with what binding agreements, and with what accountability.</td>
+        </tr>
+        <tr>
+          <td>Contract management platforms</td>
+          <td>Template management, signature workflows, obligation tracking for human-negotiated agreements</td>
+          <td class="gap-cell">Built for human-speed negotiation and human legal review. No infrastructure for machine-speed bilateral agreement formation with independent enforcement and evidence at each step.</td>
         </tr>
         <tr>
           <td>Policy-as-code / OPA</td>
@@ -68,7 +138,7 @@ description: "AI governance today is structurally self-attesting. The party whos
         <tr>
           <td>Open governance toolkits</td>
           <td>Policy enforcement, audit logging, identity primitives as components</td>
-          <td class="gap-cell">Signing keys held in application process memory. Evidence held by the operator. No operator accountability. A library is a starting point, not a deployable governance system.</td>
+          <td class="gap-cell">Signing keys held in application process memory. Evidence held by the operator. A library is a starting point, not a deployable governance system.</td>
         </tr>
         <tr>
           <td>Logging / SIEM</td>
@@ -80,29 +150,80 @@ description: "AI governance today is structurally self-attesting. The party whos
           <td>Hardware-isolated execution, tamper-evident measurement</td>
           <td class="gap-cell">Verification depends on vendor attestation infrastructure. Does not solve the full governance lifecycle above the execution boundary.</td>
         </tr>
+        <tr>
+          <td>Payment protocols / settlement</td>
+          <td>Card networks, ACH, wire transfers, blockchain-based settlement, emerging agent payment APIs</td>
+          <td class="gap-cell">Payment rails are forming. No infrastructure carries governance provenance from identity through action through to the financial outcome.</td>
+        </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<section class="section-light">
-  <div class="container container-narrow">
-    <h2>The auditor analogy.</h2>
-    <p>Every public company faces a version of this problem and settled it a century ago. A company does not audit its own books. The auditor's independence was made a structural requirement, written into securities law, after enough decades of watching what a self-checked opinion is worth when something goes wrong.</p>
-    <p>Independence has to be structural. The auditor's incentives, access, and tools sit outside the company being audited. A careful internal process is not a substitute, because the question is never only whether the work was honest. It is whether an outside party can rely on it.</p>
-    <p>Agent governance has arrived at the same problem without the hundred years of hindsight. When a single vendor supplies the agent, supplies the layer that governs the agent, and supplies the system that records what that layer decided, the evidence and the conduct it describes share one root of trust. The honest answers to "who outside the vendor has seen this evidence" and "who could have changed it" are <em>no one</em> and <em>the vendor</em>. That is enough to move the records from proof to assertion, without anyone alleging a thing.</p>
+<!-- Structural questions -->
+<section class="section-light-alt">
+  <div class="container">
+    <span class="eyebrow">Substrate Questions</span>
+    <h2>Questions no product can answer alone</h2>
+    <div class="section-intro">
+      <p>Each of these questions crosses organizational boundaries, jurisdictions, and trust domains. They require standards to form around them before they can be answered. The Scarp substrate architecture contains answers to all of them. Full treatment on the <a href="/scarp-governance-gateway#design-boundary">Scarp Gateway page</a>.</p>
+    </div>
+
+    <div class="feature-grid-2x2">
+      <div class="boundary-item">
+        <h3>Liability attribution across organizational boundaries</h3>
+        <p class="boundary-scenario">A patient is harmed by a diagnostic recommendation. The hospital used a third-party model, governed by a third-party governance layer, running on a fourth party's infrastructure. Which party bears liability, and what evidence settles the question?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Cross-organizational trust establishment</h3>
+        <p class="boundary-scenario">A manufacturer's procurement agent needs to verify that a supplier's sales agent is authorized to commit to pricing and delivery terms. Neither organization controls the other's identity infrastructure. What protocol establishes mutual trust?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Model certification at runtime</h3>
+        <p class="boundary-scenario">A defense agency requires that only independently certified models process classified data. An agent selects a model for a workflow. Can the agent verify at runtime that this specific model version holds a valid certification from a recognized authority for this specific task category in this jurisdiction? Can an uncertified model be excluded not by policy but by the absence of a valid certificate chain?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Data provenance under adversarial conditions</h3>
+        <p class="boundary-scenario">An agent assembles a risk assessment from sensor data across multiple jurisdictions. State-level adversaries may be forging data attestations. Can the agent verify that each data source's provenance chains to a trusted certification authority, and reject sources whose attestations do not validate?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Delegation scope and constraint propagation</h3>
+        <p class="boundary-scenario">A legal department authorizes an agent to review contracts up to $500K. That agent delegates document extraction to a second agent. Does the $500K ceiling travel with the delegation? What enforces it?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Revocation propagation across agent chains</h3>
+        <p class="boundary-scenario">A principal revokes an agent's authority mid-workflow. That agent has already delegated to three downstream agents across two organizations. How does revocation propagate to agents the principal does not control?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Sensitivity ceiling inheritance</h3>
+        <p class="boundary-scenario">An agent processing public data calls a tool that returns data classified as confidential. The agent's original sensitivity ceiling was "public." What happens to everything the agent produces after that tool call?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Policy reconciliation between organizations</h3>
+        <p class="boundary-scenario">Organization A requires all AI outputs to be reviewed by a human. Organization B permits fully autonomous operation for low-risk tasks. Their agents need to collaborate on a joint workflow. Which policy governs?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Federation across governance domains</h3>
+        <p class="boundary-scenario">A multinational runs separate governance domains in the EU, US, and Singapore, each with different regulatory requirements. An agent workflow spans all three. How do three governance domains produce a single coherent evidence chain?</p>
+      </div>
+      <div class="boundary-item">
+        <h3>Agent reputation portability</h3>
+        <p class="boundary-scenario">An agent with a strong performance record on one platform is deployed on a second. The reputation does not travel. The second platform has no record of past behavior. The first platform's reputation score cannot be verified independently because it lives inside the first platform's own database. How does portable, tamper-evident reputation work across platforms?</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Structural answer -->
 <section class="section-dark">
   <div class="container container-narrow">
-    <h2>The structural answer.</h2>
-    <p>The alternative is an architecture in which the identity of every participant is established before the action, governance is evaluated outside the agent's reach during the action, and the evidence is recorded in independently verifiable form at the moment of the action, as structural properties of the infrastructure the AI runs on.</p>
-    <p>Four foundational layers operating together produce this result: Identity, Cooperation, Governance, and Settlement. The substrate does not make AI safe. It makes AI governable, so that every participant who needs to verify what an AI system is, what it did, under what rules, with what authority, can do so on their own infrastructure, without trusting the governed party's systems.</p>
+    <h2>The structural answer</h2>
+    <p>The alternative is to build the properties in from the start. A substrate in which every participant carries verifiable identity before any action begins, cooperation is governed by binding agreements with independently verifiable records, every action is governed with evidence produced outside the agent's reach, and value moves between participants with full provenance from identity through governance into the financial outcome.</p>
+    <p>Four foundational layers operating together produce this result: Identity, Cooperation, Governance, and Settlement. The substrate does not make AI safe. It makes AI governable, so that every participant who needs to verify what an AI system is, what it is certified to do, what it agreed to, what it did, under what rules, with what authority, and what financial obligations followed, can do so without trusting the governed party's systems.</p>
     <p>The Governance layer ships today as Scarp Governance Gateway. The remaining layers are specified in full architectural detail.</p>
     <div class="mt-3">
       <a href="/scarp-governance-gateway" class="btn btn-primary">See the Governance layer</a>
-      <a href="/insights" class="btn btn-outline" style="margin-left: 1rem;">Read the full papers</a>
+      <a href="/insights/governable-ai-from-the-ground-up" class="btn btn-outline" style="margin-left: 1rem;">Read the full papers</a>
     </div>
   </div>
 </section>
