@@ -853,9 +853,14 @@ p:last-child { margin-bottom: 0; }
 
 .standards-bar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   margin: 2rem 0;
+}
+
+/* On the SG page the 8 badges should lock to 4 columns */
+.standards-bar-4x2 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .standard-badge {
@@ -906,7 +911,7 @@ p:last-child { margin-bottom: 0; }
 .custody-table td {
   padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--border-light);
-  color: color: #333;
+  color: #333;
 }
 
 .custody-table td:first-child {
