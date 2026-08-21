@@ -322,10 +322,23 @@ p:last-child { margin-bottom: 0; }
 .btn-outline {
   background: transparent;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.5);
 }
 .btn-outline:hover {
+  background: rgba(255,255,255,0.1);
   border-color: #fff;
+  color: #fff;
+}
+
+/* Outline buttons on light backgrounds */
+.section-light .btn-outline,
+.section-light-alt .btn-outline {
+  color: var(--bg-dark);
+  border-color: var(--bg-dark);
+}
+.section-light .btn-outline:hover,
+.section-light-alt .btn-outline:hover {
+  background: var(--bg-dark);
   color: #fff;
 }
 
@@ -350,20 +363,20 @@ p:last-child { margin-bottom: 0; }
 }
 
 .layer-band:nth-child(1) {
-  background: rgba(196, 162, 101, 0.15);
-  border-color: var(--layer-identity);
+  background: rgba(196, 162, 101, 0.25);
+  border-color: var(--sandstone);
 }
 .layer-band:nth-child(2) {
-  background: rgba(107, 132, 148, 0.15);
-  border-color: var(--layer-cooperation);
+  background: rgba(107, 132, 148, 0.25);
+  border-color: var(--strata-blue);
 }
 .layer-band:nth-child(3) {
-  background: rgba(42, 90, 94, 0.15);
-  border-color: var(--layer-governance);
+  background: rgba(42, 90, 94, 0.3);
+  border-color: #4A9A8E;
 }
 .layer-band:nth-child(4) {
-  background: rgba(27, 40, 56, 0.25);
-  border-color: var(--layer-settlement);
+  background: rgba(80, 100, 130, 0.2);
+  border-color: #7A8EA0;
 }
 
 .layer-name {
@@ -397,6 +410,112 @@ p:last-child { margin-bottom: 0; }
   color: var(--strata-blue);
 }
 
+/* Four-questions grid forced 2x2 */
+.feature-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Design boundary / A2A questions */
+.boundary-item {
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.section-dark .boundary-item,
+.section-dark-alt .boundary-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+}
+
+.section-light .boundary-item,
+.section-light-alt .boundary-item {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.boundary-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.boundary-scenario {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.section-dark .boundary-scenario {
+  color: var(--text-on-dark-muted);
+}
+
+.boundary-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* Layer description blocks on landing page */
+.layer-detail {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.layer-detail:last-child {
+  border-bottom: none;
+}
+
+.layer-detail h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Use case full-width cards */
+.use-case-card {
+  padding: 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.section-light .use-case-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.section-dark .use-case-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+}
+
+.use-case-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Court case callout boxes */
+.case-callout {
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--sandstone);
+}
+
+.section-dark .case-callout {
+  background: rgba(196, 162, 101, 0.08);
+}
+
+.section-light .case-callout {
+  background: rgba(196, 162, 101, 0.06);
+}
+
+.case-callout .case-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 /* ==========================================================================
    Comparison table
    ========================================================================== */
@@ -414,8 +533,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .section-dark .comparison-table th {
@@ -559,8 +677,7 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--strata-teal);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-bottom: 0.25rem;
 }
 
@@ -601,8 +718,7 @@ p:last-child { margin-bottom: 0; }
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
   background: var(--bg-light-alt);
@@ -725,8 +841,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0.75rem 1rem;
   font-size: 0.85rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   border-bottom: 2px solid var(--border-dark);
   color: var(--sandstone);
 }
@@ -776,8 +891,7 @@ p:last-child { margin-bottom: 0; }
 .eyebrow {
   font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
   display: block;
 }
@@ -819,6 +933,10 @@ p:last-child { margin-bottom: 0; }
   }
 
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid-2x2 {
     grid-template-columns: 1fr;
   }
 
