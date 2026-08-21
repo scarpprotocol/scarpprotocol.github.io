@@ -890,7 +890,7 @@ p:last-child { margin-bottom: 0; }
 
 .eyebrow {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
   display: block;
@@ -898,6 +898,115 @@ p:last-child { margin-bottom: 0; }
 
 .section-dark .eyebrow { color: var(--sandstone); }
 .section-light .eyebrow { color: var(--strata-teal); }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background: #141E2B;
+  color: var(--text-on-dark-muted);
+}
+
+.footer-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-main {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-on-dark-muted);
+  margin-bottom: 1.25rem;
+  max-width: 280px;
+}
+
+.footer-patent {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(155,168,180,0.6);
+}
+
+.footer-nav-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-col li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-nav-col a {
+  font-size: 0.9rem;
+  color: var(--text-on-dark-muted);
+  transition: color 0.2s;
+}
+
+.footer-nav-col a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(155,168,180,0.5);
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  font-size: 0.8rem;
+  color: rgba(155,168,180,0.5);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--text-on-dark-muted);
+}
 
 /* ==========================================================================
    Responsive
@@ -952,4 +1061,23 @@ p:last-child { margin-bottom: 0; }
 
   .comparison-table { font-size: 0.85rem; }
   .comparison-table th, .comparison-table td { padding: 0.6rem 0.5rem; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+
+  .footer-tagline {
+    max-width: none;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
 }
