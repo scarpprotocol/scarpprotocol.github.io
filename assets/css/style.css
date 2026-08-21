@@ -853,14 +853,14 @@ p:last-child { margin-bottom: 0; }
 
 .standards-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin: 2rem 0;
 }
 
-/* On the SG page the 8 badges should lock to 4 columns */
-.standards-bar-4x2 {
-  grid-template-columns: repeat(4, 1fr);
+/* Narrow containers (contact page): badges fill available width */
+.container-narrow .standards-bar {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .standard-badge {
