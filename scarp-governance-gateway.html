@@ -1,15 +1,14 @@
 ---
 layout: default
 title: Scarp Governance Gateway
-description: "Independent governance gateway for enterprise AI agents. Classifies content, evaluates policies, enforces decisions, produces independently verifiable evidence for every governed action."
+description: "Production governance infrastructure for enterprise AI agents. Classifies content, evaluates policies, enforces decisions, produces independently verifiable evidence for every governed action."
 permalink: /scarp-governance-gateway/
 ---
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Layer 3: Governance</span>
     <h1>Scarp Governance Gateway</h1>
-    <p class="lead">Independent governance gateway for enterprise AI agents. Every agent workflow is governed end to end: content is classified, policies are evaluated, decisions are enforced in real time, sensitive data is contained, malicious activity is detected and stopped, operations can be halted at any scope, and every governed action produces a cryptographically signed evidence record the customer owns and any third party can verify.</p>
+    <p class="lead">Scarp Governance Gateway is the production implementation of Scarp's Governance layer: the parts that operate inside a single organization without requiring cross-organizational standards. It is a complete, fully functional governance product. Every agent workflow is governed end to end: content is classified, policies are evaluated, decisions are enforced in real time, sensitive data is contained, malicious activity is detected and stopped, operations can be halted at any scope, and every governed action produces a cryptographically signed evidence record the customer owns and any third party can verify.</p>
   </div>
 </section>
 
@@ -22,66 +21,66 @@ permalink: /scarp-governance-gateway/
       <p>Scarp Governance Gateway operates as a stateless proxy between agents and the AI providers, tools, and services they interact with. All traffic routes through the gateway. The gateway classifies content, evaluates policies against the full governance scope the agent's identity carries, and enforces the decision before the call proceeds. Every governed action produces a signed evidence record.</p>
     </div>
 
-    <div class="diagram-container">
-      <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, -apple-system, sans-serif;">
+    <div class="diagram-container" style="max-width: 1060px; margin-left: 0; margin-right: auto;">
+      <svg viewBox="0 0 1060 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, -apple-system, sans-serif;">
         <defs>
           <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6B8494"/></marker>
           <marker id="ahb" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto"><polygon points="8 0, 0 3, 8 6" fill="#6B8494"/></marker>
           <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C4A265"/></marker>
           <marker id="agb" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto"><polygon points="8 0, 0 3, 8 6" fill="#C4A265"/></marker>
         </defs>
-        <rect width="900" height="480" fill="#F5F3EF" rx="4"/>
-        <rect x="30" y="20" width="840" height="440" rx="4" fill="none" stroke="#D4D0C8" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <rect width="1060" height="480" fill="#F5F3EF" rx="4"/>
+        <rect x="30" y="20" width="1000" height="440" rx="4" fill="none" stroke="#D4D0C8" stroke-width="1.5" stroke-dasharray="6,4"/>
         <text x="50" y="44" font-size="11" fill="#6B6B6B" font-weight="600" letter-spacing="0.04em">Customer infrastructure</text>
-        <rect x="60" y="120" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
-        <text x="140" y="148" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent A</text>
-        <rect x="60" y="196" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
-        <text x="140" y="224" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent B</text>
-        <rect x="60" y="272" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
-        <text x="140" y="300" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent C</text>
-        <text x="140" y="340" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.04em">Agents</text>
-        <rect x="310" y="70" width="260" height="280" rx="4" fill="#2A5A5E" stroke="#3A6B5E" stroke-width="2"/>
-        <text x="440" y="98" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Scarp Governance Gateway</text>
-        <rect x="330" y="112" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
-        <text x="440" y="131" text-anchor="middle" font-size="11" fill="#C4D8D0">Classify (PII, credentials, adversarial)</text>
-        <rect x="330" y="148" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
-        <text x="440" y="167" text-anchor="middle" font-size="11" fill="#C4D8D0">Evaluate policies (multi-dimensional)</text>
-        <rect x="330" y="184" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
-        <text x="440" y="203" text-anchor="middle" font-size="11" fill="#C4D8D0">Decide (Allow / Block / Hold)</text>
-        <rect x="330" y="220" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
-        <text x="440" y="239" text-anchor="middle" font-size="11" fill="#C4D8D0">Sign evidence (Key Store API)</text>
-        <rect x="330" y="256" width="220" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
-        <text x="440" y="275" text-anchor="middle" font-size="11" fill="#C4D8D0">Store pack (customer storage)</text>
-        <rect x="330" y="296" width="105" height="28" rx="2" fill="rgba(255,255,255,0.06)"/>
-        <text x="382" y="315" text-anchor="middle" font-size="10" fill="#9BB8B0">Kill switches (5 scopes)</text>
-        <rect x="445" y="296" width="105" height="28" rx="2" fill="rgba(255,255,255,0.06)"/>
-        <text x="497" y="315" text-anchor="middle" font-size="10" fill="#9BB8B0">Governed config control</text>
-        <rect x="680" y="168" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
-        <text x="760" y="196" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">AI Providers</text>
-        <rect x="680" y="244" width="160" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
-        <text x="760" y="272" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">MCP Tool Servers</text>
-        <text x="760" y="312" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.04em">Providers and tools</text>
-        <line x1="220" y1="144" x2="308" y2="144" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
-        <text x="264" y="138" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
-        <line x1="220" y1="220" x2="308" y2="220" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
-        <text x="264" y="214" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
-        <line x1="220" y1="296" x2="308" y2="296" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
-        <text x="264" y="290" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
-        <line x1="572" y1="192" x2="678" y2="192" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
-        <text x="625" y="186" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
-        <line x1="572" y1="268" x2="678" y2="268" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
-        <text x="625" y="262" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS / MCP</text>
-        <rect x="325" y="390" width="120" height="44" rx="3" fill="#C4A265" stroke="#A88B50"/>
-        <text x="385" y="416" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">Customer Key Store</text>
-        <rect x="460" y="390" width="105" height="44" rx="3" fill="#C4A265" stroke="#A88B50"/>
-        <text x="512" y="416" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">Evidence Store</text>
-        <line x1="398" y1="350" x2="385" y2="388" stroke="#C4A265" stroke-width="1.5" marker-end="url(#ag)" marker-start="url(#agb)"/>
-        <text x="365" y="372" text-anchor="end" font-size="9" fill="#C4A265" font-weight="500">Sign API</text>
-        <line x1="490" y1="350" x2="512" y2="388" stroke="#C4A265" stroke-width="1.5" marker-end="url(#ag)"/>
-        <text x="520" y="372" font-size="9" fill="#C4A265" font-weight="500">Write</text>
+        <rect x="60" y="120" width="180" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="150" y="148" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent A</text>
+        <rect x="60" y="196" width="180" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="150" y="224" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent B</text>
+        <rect x="60" y="272" width="180" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="150" y="300" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">Agent C</text>
+        <text x="150" y="340" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.04em">Agents</text>
+        <rect x="370" y="70" width="300" height="280" rx="4" fill="#2A5A5E" stroke="#3A6B5E" stroke-width="2"/>
+        <text x="520" y="98" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Scarp Governance Gateway</text>
+        <rect x="390" y="112" width="260" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="520" y="131" text-anchor="middle" font-size="11" fill="#C4D8D0">Classify (PII, credentials, adversarial)</text>
+        <rect x="390" y="148" width="260" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="520" y="167" text-anchor="middle" font-size="11" fill="#C4D8D0">Evaluate policies (multi-dimensional)</text>
+        <rect x="390" y="184" width="260" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="520" y="203" text-anchor="middle" font-size="11" fill="#C4D8D0">Decide (Allow / Block / Hold)</text>
+        <rect x="390" y="220" width="260" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="520" y="239" text-anchor="middle" font-size="11" fill="#C4D8D0">Sign evidence (Key Store API)</text>
+        <rect x="390" y="256" width="260" height="28" rx="2" fill="rgba(255,255,255,0.1)"/>
+        <text x="520" y="275" text-anchor="middle" font-size="11" fill="#C4D8D0">Store pack (customer storage)</text>
+        <rect x="390" y="296" width="125" height="28" rx="2" fill="rgba(255,255,255,0.06)"/>
+        <text x="452" y="315" text-anchor="middle" font-size="10" fill="#9BB8B0">Kill switches (5 scopes)</text>
+        <rect x="525" y="296" width="125" height="28" rx="2" fill="rgba(255,255,255,0.06)"/>
+        <text x="587" y="315" text-anchor="middle" font-size="10" fill="#9BB8B0">Governed config control</text>
+        <rect x="790" y="168" width="190" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="885" y="196" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">AI Providers</text>
+        <rect x="790" y="244" width="190" height="48" rx="3" fill="#1B2838" stroke="#2E4050"/>
+        <text x="885" y="272" text-anchor="middle" font-size="13" fill="#E8E4DC" font-weight="500">MCP Tool Servers</text>
+        <text x="885" y="312" text-anchor="middle" font-size="10" fill="#6B6B6B" font-weight="600" letter-spacing="0.04em">Providers and tools</text>
+        <line x1="240" y1="144" x2="368" y2="144" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
+        <text x="304" y="138" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
+        <line x1="240" y1="220" x2="368" y2="220" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
+        <text x="304" y="214" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
+        <line x1="240" y1="296" x2="368" y2="296" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
+        <text x="304" y="290" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
+        <line x1="672" y1="192" x2="788" y2="192" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
+        <text x="730" y="186" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS</text>
+        <line x1="672" y1="268" x2="788" y2="268" stroke="#6B8494" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ahb)"/>
+        <text x="730" y="262" text-anchor="middle" font-size="9" fill="#6B8494" font-weight="500">HTTPS / MCP</text>
+        <rect x="385" y="390" width="140" height="44" rx="3" fill="#C4A265" stroke="#A88B50"/>
+        <text x="455" y="416" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">Customer Key Store</text>
+        <rect x="540" y="390" width="120" height="44" rx="3" fill="#C4A265" stroke="#A88B50"/>
+        <text x="600" y="416" text-anchor="middle" font-size="11" fill="#1B2838" font-weight="600">Evidence Store</text>
+        <line x1="468" y1="350" x2="455" y2="388" stroke="#C4A265" stroke-width="1.5" marker-end="url(#ag)" marker-start="url(#agb)"/>
+        <text x="430" y="372" text-anchor="end" font-size="9" fill="#C4A265" font-weight="500">Sign API</text>
+        <line x1="560" y1="350" x2="590" y2="388" stroke="#C4A265" stroke-width="1.5" marker-end="url(#ag)"/>
+        <text x="600" y="372" font-size="9" fill="#C4A265" font-weight="500">Write</text>
       </svg>
     </div>
-    <p style="text-align: center; font-size: 0.9rem; color: var(--text-on-dark-muted); margin-top: 0.5rem;">All components deploy inside the customer's own infrastructure. The root signing key remains in the customer's key store and never enters the gateway process. There is no vendor copy of data, evidence, or telemetry.</p>
+    <p style="text-align: center; font-size: 0.9rem; color: var(--text-on-dark-muted); margin-top: 0.5rem;">All components deploy into infrastructure the customer controls. The root signing key remains in the customer's key store and never enters the gateway process. There is no vendor copy of data, evidence, or telemetry.</p>
   </div>
 </section>
 
@@ -91,7 +90,7 @@ permalink: /scarp-governance-gateway/
     <span class="eyebrow">Capabilities</span>
     <h2>Full governance surface</h2>
     <div class="section-intro">
-      <p>Scarp Governance Gateway governs the entire agent workflow: agents, the systems they interact with, the tools they invoke, and the models they call. It classifies content, evaluates policies, detects credentials and adversarial prompts, prevents sensitive data from leaving the customer's boundary, enforces governance decisions in real time, supports complex multi-hop workflows, allows targeted operational halts at any scope, enforces spending limits, and produces a signed evidence record for every governed action. Every capability listed here is operational.</p>
+      <p>Scarp Governance Gateway governs the entire agent workflow: agents, the systems they interact with, the tools they invoke, and the models they call. Every capability listed here is operational.</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
@@ -126,6 +125,10 @@ permalink: /scarp-governance-gateway/
         <h3>Budget enforcement</h3>
         <p>Per-action spending limits enforced at the governance layer. The budget is a governance constraint, not a provider-side billing limit.</p>
       </div>
+      <div class="feature-card">
+        <h3>Tool and system governance</h3>
+        <p>Every tool an agent invokes and every system trigger that initiates an agent workflow is a registered entity with identity-bound access control. Default-deny posture: unregistered tools produce an immediate block. Bilateral enforcement: agent permissions and tool permissions must both authorize the interaction. System triggers (schedulers, webhooks, batch processes) are governed identically to human-initiated workflows. Same policy evaluation, same evidence, same emergency controls.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -142,21 +145,21 @@ permalink: /scarp-governance-gateway/
       <div class="flow-step">
         <span class="flow-number">1</span>
         <div class="flow-content">
-          <h4>Customer-managed key store, never the gateway.</h4>
+          <h4>Customer-managed key store, never the gateway</h4>
           <p>Every evidence record is signed via the customer's own key store. The root signing key remains in the customer's key store and never enters the gateway process. The gateway calls the signing API through a service identity. The customer holds the keys. The gateway does not.</p>
         </div>
       </div>
       <div class="flow-step">
         <span class="flow-number">2</span>
         <div class="flow-content">
-          <h4>Customer-controlled, write-once.</h4>
+          <h4>Customer-controlled, write-once</h4>
           <p>Evidence packs are stored in the customer's own infrastructure, one pack per record, write-once, never modified. The customer can remove the gateway entirely and retain every piece of governance evidence produced. The evidence is self-contained, portable, and verifiable without any operational dependency on the gateway operator.</p>
         </div>
       </div>
       <div class="flow-step">
         <span class="flow-number">3</span>
         <div class="flow-content">
-          <h4>Offline, independent, complete.</h4>
+          <h4>Offline, independent, complete</h4>
           <p>Any third party with the public key and the evidence pack can verify the record on their own machine. No server to reach. No account to create. No callback to anyone. Change one field and verification fails. The verifier is open source and deterministic.</p>
           <p>This property is what separates a defensible legal position from an indefensible one. AI regulation is tightening and cases are already in court. In <em>Mobley v. Workday</em> (US, 2024-2026), a federal court ruled that an AI vendor performing screening functions is an agent of the employer and shares discrimination liability. The class action is in discovery. In the Dutch Toeslagenaffaire (Netherlands, 2021), an algorithm used by the Dutch tax authority wrongly accused 26,000 families of welfare fraud, targeting dual-nationality holders. The government resigned. In both cases, the inability to independently verify what the AI system did prolonged harm. Independently verifiable governance evidence is what separates proof from assertion when the record is tested.</p>
         </div>
@@ -164,9 +167,9 @@ permalink: /scarp-governance-gateway/
       <div class="flow-step" style="border-bottom: none;">
         <span class="flow-number">4</span>
         <div class="flow-content">
-          <h4>Zero telemetry. Zero aggregation.</h4>
+          <h4>Zero telemetry. Zero aggregation</h4>
           <p>There is no aggregation service. There is no telemetry sent to the gateway operator or any third party. No phone-home. No cross-tenant data movement. The customer's governance data stays inside the customer's boundary.</p>
-          <p>AI governance evidence is a different category of data from CRM records or IT service tickets. It contains the full request and response payloads of every AI interaction. When Company A sends Company B's data through a SaaS AI governance vendor, Company A may breach its data-handling obligations to Company B, because Company B's agreement with Company A does not contemplate a third-party SaaS vendor processing that data for AI governance purposes. The data protection agreements and sub-processor frameworks that authorize SaaS data processing were not built for this category of data. Scarp Governance Gateway deploys inside the customer's own infrastructure. No vendor copy. No contractual exposure.</p>
+          <p>AI governance evidence is a different category of data from CRM records or IT service tickets. It contains the full request and response payloads of every AI interaction. When Company A sends Company B's data through a SaaS AI governance vendor, Company A may breach its data-handling obligations to Company B, because Company B's agreement with Company A does not contemplate a third-party SaaS vendor processing that data for AI governance purposes. Scarp Governance Gateway deploys into infrastructure the customer controls. No vendor copy. No contractual exposure.</p>
         </div>
       </div>
     </div>
@@ -245,7 +248,7 @@ permalink: /scarp-governance-gateway/
     <div class="section-intro">
       <p>The open-source standalone verification tool that answers the one question the architecture turns on: can an outside party confirm a governance record without trusting whoever produced it?</p>
     </div>
-    <div class="feature-grid">
+    <div class="feature-grid-2x2">
       <div class="feature-card">
         <h3>Single-pack verification</h3>
         <p>Verifies the cryptographic signature and content integrity of any individual evidence pack. Change one field and it fails.</p>
@@ -268,57 +271,65 @@ permalink: /scarp-governance-gateway/
 </section>
 
 <!-- Design Boundary -->
-<section class="section-light-alt">
+<section class="section-light-alt" id="design-boundary">
   <div class="container">
     <span class="eyebrow">Design Boundary</span>
-    <h2>What the Governance layer does not reach, and why</h2>
+    <h2>What SG V1 does not yet reach, and why</h2>
     <div class="section-intro">
-      <p>Scarp Governance Gateway ships the Governance layer. The structural questions below sit in the Identity, Cooperation, and Settlement layers. Each is technically straightforward to address. Implementation is consciously held until reasonable standards form, because shipping proprietary answers to substrate problems would expose customers to migration costs and cross-jurisdictional liability when standards arrive. That decision protects customers.</p>
+      <p>Governed multi-agent coordination is technically feasible to build: direct agent-to-agent communication, deep chains where each agent delegates to the next, and multi-agent swarms operating as coordinated teams. It is deliberately not shipped. The reason is that it requires answers to ten open questions, and no framework, standard, or specification has answered any of them. Scarp's four layers are interlocking; every question below ultimately requires all four to function together. The per-question layer attribution identifies where the specific unsolved primitive sits. Layer 3 (Governance) never appears because it is the one layer that is shipped. The Scarp architecture already contains answers to each of these questions. Standards need to form around them before they can be implemented, because shipping proprietary solutions to substrate problems would expose customers to migration costs and cross-jurisdictional liability when standards arrive. The engineering is straightforward. The code changes are not large. Without standards, it would be irresponsible to ship.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>1. Liability attribution across organizational boundaries</h3>
-      <p class="boundary-scenario">A financial institution's compliance agent delegates regulatory analysis to a frontier model provider's API. The model misclassifies a sanctions exposure. The institution acts on the result. The regulator finds the error. In the human world, this engagement runs under a professional services agreement with liability caps and indemnification. In the agent world, the engagement runs under a terms-of-service disclaimer. No contract formation at machine speed. No negotiated liability allocation.</p>
-      <p>Scarp's Cooperation and Settlement layers provide the machine-speed equivalent: governed negotiation, binding contract formation, and settlement with full provenance.</p>
+      <h3>1. Cross-agent liability attribution (Settlement)</h3>
+      <p>When Agent A delegates to Agent B and Agent B generates harmful content, who bears liability? This question applies whether the two agents belong to different operators or to the same organization. Even within a single company, delegation creates an accountability gap: which team authorized the delegated action, which budget absorbs the consequence, and which agent's governance record is the one a regulator examines. Across organizations, the question compounds: the delegator's operator? The executor's operator? Both? In what proportion? The gateway can record that delegation occurred. The evidence pack shows it. But the governance meaning of that record (who is accountable for the delegated action) has no legal or contractual framework. Shipping delegation without a liability model means customers bear unquantified risk.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>2. Cross-organizational trust establishment</h3>
-      <p class="boundary-scenario">A logistics agent receives a shipping instruction from an entity claiming to represent a customer. How does the receiving agent verify both identity and authorization? Identity alone confirms who the entity is. Authorization confirms what the entity may do: spending limits, scope of representation, authority to commit.</p>
-      <p>The Identity layer confirms who. The Cooperation layer confirms what they are authorized to do. Without both layers, cross-organizational engagement runs on unverified assertions.</p>
+      <h3>2. Cross-organizational trust verification (Identity, Cooperation)</h3>
+      <p>When Agent A and Agent B belong to different organizations (different gateway instances, different identity tenants, different cloud providers), who vouches for Agent B's identity and governance posture? SG's identity layer handles single-organization entity registration. Cross-org delegation requires mutual trust verification: "I trust that your governance instance governs Agent B to a standard I accept." No protocol exists for this exchange.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>3. Delegation scope and constraint propagation</h3>
-      <p class="boundary-scenario">A financial institution's compliance agent delegates document review to an external legal services agent with constraints: specific document access, model restrictions, confidentiality classification. No protocol defines how those constraints propagate across delegation boundaries or how the delegating party verifies compliance.</p>
+      <h3>3. Delegation scope boundaries (Cooperation, Settlement)</h3>
+      <p>When Agent A delegates to Agent B, what permissions does B receive? Agent A's full scope? A restricted subset? Who defines the restriction? The sensitivity ceiling mechanism prevents escalation within a single agent's workflow. Cross-agent scope partitioning requires governance contracts between entities that define enforceable boundaries on delegated work, and a negotiation protocol between governance instances to establish those boundaries. No standard defines either.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>4. Revocation propagation across agent chains</h3>
-      <p class="boundary-scenario">A pharmaceutical company revokes an agent's authorization after a data quality issue. The agent has already delegated to downstream agents. Authorization revocation must reach all affected parties faster than an agent can complete a governed action. No mechanism for real-time revocation propagation across organizational boundaries exists in production.</p>
+      <h3>4. Cross-agent revocation propagation (Identity, Cooperation)</h3>
+      <p>If Agent A's kill switch fires after Agent A has already delegated to Agent B, does Agent B's work stop? Kill switch checks run against the presenting agent's chain within a single continuation token. Tool-mediated workflows with separate tokens per agent do not share a token chain. Proper cross-agent revocation requires a propagation mechanism so that revoking Agent A's authority cascades to any agents working on Agent A's behalf, including agents the revoking party does not control.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>5. Intent auditability and cross-domain verification</h3>
-      <p class="boundary-scenario">A property management agent delegates maintenance to a contractor's agent, which subcontracts to a supplier's agent. The owner disputes a charge. An auditor must reconstruct intent across three organizations and verify evidence from three separate trust domains, each signed with different keys, stored in different infrastructure.</p>
-      <p>Three structurally different Scarp artifacts are involved: governed contracts (Cooperation layer, binding co-signed agreements formed before work begins), governance evidence (Governance layer, per-action accountability), and settlement linkage (Settlement layer, payment bound to contract and evidence). No existing infrastructure distinguishes or verifies all three across organizational boundaries.</p>
+      <h3>5. Auditability of intent (Settlement)</h3>
+      <p>In tool-mediated coordination, evidence packs prove that Agent A wrote data and Agent B read data. They do not prove Agent A intended Agent B to act on that data. More critically, they do not prove what scope or constraints Agent A intended to impose on Agent B's use of it. Intent attribution across agent boundaries is a governance primitive that requires explicit delegation declarations. No standard defines how AI agents declare delegation intent in a machine-verifiable way.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>6. Sensitivity ceiling inheritance</h3>
-      <p class="boundary-scenario">An insurance company classifies a claims dataset as restricted PHI. It delegates actuarial analysis to a reinsurer. Does the reinsurer inherit the PHI classification? Different organizations maintain different sensitivity taxonomies. Without a shared taxonomy from the Cooperation layer, classification ceilings cannot propagate across organizational boundaries.</p>
+      <h3>6. Sensitivity ceiling inheritance across delegation boundaries (Cooperation, Settlement)</h3>
+      <p>Agent A's workflow has a sensitivity ceiling of CONFIDENTIAL. Agent A delegates to Agent B, whose own governance permits SECRET. Does the delegated work inherit Agent A's lower ceiling (secure, but restricts Agent B's capabilities) or run under Agent B's higher ceiling (permissive, but potentially violates the constraints under which Agent A's operator authorized the original workflow)? Cross-agent delegation requires a ceiling negotiation protocol: who sets the floor, who can raise it, and what evidence proves the agreed ceiling was enforced throughout the delegated work.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>7. Policy reconciliation between organizations</h3>
-      <p class="boundary-scenario">Company A prohibits open-weight models. Company B permits them. A delegation crosses the boundary. Which policy governs? Without contract formation through the Cooperation layer establishing agreed governance terms before work begins, policy conflicts are discovered after the fact.</p>
+      <h3>7. Evidence chain continuity across governance instances (Cooperation)</h3>
+      <p>Within a single governance instance, SG's chain construction links every evidence pack to its predecessor via cryptographic hash. When Agent A is governed by Instance 1 and Agent B by Instance 2, the hash chain breaks at the delegation boundary. Instance 2 cannot verify the chain root because it has no access to Instance 1's evidence store. A regulator or auditor reviewing the complete workflow receives two disconnected chain fragments with no cryptographic link between them.</p>
     </div>
 
     <div class="boundary-item">
-      <h3>8. Federation across governance domains</h3>
-      <p class="boundary-scenario">A European financial institution delegates regulatory reporting to a US analytics provider. EU AI Act obligations apply on one side. US frameworks on the other. Jurisdictional asymmetry, regulatory divergence, and governance domain boundaries that do not align with organizational or national boundaries create structural gaps no single-jurisdiction governance system resolves.</p>
-      <p>The engineering is straightforward. The standards do not exist. Shipping without standards would expose customers to cross-jurisdictional liability. That risk is not ours to transfer.</p>
+      <h3>8. Policy reconciliation across governance instances (Cooperation, Settlement)</h3>
+      <p>Agent A's governance requires human review above $50K spend. Agent B's governance permits autonomous operation up to $200K. A delegation crosses the boundary for a $75K task. Which policy governs? The question is bilateral: both governance instances must evaluate and agree before the delegated work begins. No protocol exists for governance instances to negotiate and reconcile conflicting policies at machine speed.</p>
     </div>
+
+    <div class="boundary-item">
+      <h3>9. Federation across governance domains (Cooperation)</h3>
+      <p>A European financial institution delegates regulatory reporting to a US analytics provider. EU AI Act obligations apply on one side. US frameworks on the other. Jurisdictional asymmetry, regulatory divergence, and governance domain boundaries that do not align with organizational or national boundaries create structural gaps no single-jurisdiction governance system resolves. A multinational running separate governance domains in the EU, US, and Singapore needs a single coherent evidence chain across all three for any workflow that spans them.</p>
+    </div>
+
+    <div class="boundary-item">
+      <h3>10. Dispute resolution and arbitration (Cooperation, Settlement)</h3>
+      <p>Two agents' governance records disagree about what was agreed during a negotiation. Agent A's evidence says the price was $50K. Agent B's evidence says $45K. In the human world, contract law, courts, and arbitration resolve the dispute. In the agent world, no arbitration mechanism exists at machine speed. Disputes fall back to human legal processes that were not designed for the volume and velocity of machine-to-machine transactions. The Cooperation layer provides governed dispute resolution grounded in the independently verifiable evidence both parties produced. Without it, every agent-to-agent disagreement escalates to human legal processes.</p>
+    </div>
+
+    <p class="mt-3">The engineering is straightforward. The standards do not exist. Shipping without standards would expose customers to cross-jurisdictional liability. That risk is not ours to transfer.</p>
   </div>
 </section>
 
